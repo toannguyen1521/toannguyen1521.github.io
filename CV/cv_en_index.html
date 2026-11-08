@@ -1,0 +1,655 @@
+<!DOCTYPE html><html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV của Tôi</title>
+    <!-- Nhúng file CSS chung của bạn -->
+    <!-- Phải có hai dấu chấm để đi lùi ra ngoài thư mục CV -->
+    <link rel="stylesheet" href="../index.css">
+    <script src="../particles.min.js"></script>
+
+    <style>
+        /* Toàn dán đoạn mã CSS đặc chế nút nhạc của trang LPEFC2 vào đây */
+        /* Ép thanh header dàn hàng ngang và căn giữa các thành phần theo chiều dọc */
+.blog-header-banner {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start;
+    padding: 10px 20px;
+    background: rgba(11, 11, 11, 0.75); /* Giữ màu nền tối của bạn */
+    width: 100%;
+}
+
+
+/* Định dạng cụm chữ menu dạt về góc phải và tạo khoảng cách thông thoáng */
+.nav-links {
+    margin-left: auto;
+    display: flex;
+    gap: 20px; /* Tạo khoảng cách 20px giữa chữ About, Skills, Contact... */
+}
+
+.nav-links a {
+    text-decoration: none;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+/* Khung bọc toàn bộ nội dung CV (Căn giữa trang) */
+.cv-container {
+    max-width: 1100px;        /* Tăng độ rộng tối đa lên 1100px cho thông thoáng */
+    margin: 80px auto 40px auto; /* 80px để cách menu trên, hai bên để 'auto' để tự động căn giữa */
+    padding: 0 20px;
+    color: #fff;
+    display: flex;            /* Dùng flexbox để điều hướng nội dung bên trong */
+    flex-direction: column;
+    align-items: center;      /* Ép các phần tử con (như tiêu đề và hộp nội dung) căn đúng tâm */
+}
+
+/* Tiêu đề chính */
+.cv-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+/* KHUNG NỘI DUNG LỚN CHỨA 2 CỘT (Đã sửa lỗi lệch) */
+.cv-content-box {
+    display: flex;
+    width: 100%;              /* Ép hộp phải bung rộng hết 100% không gian của khung chứa */
+    background: rgba(15, 15, 15, 0.65); /* Nền tối trong suốt sang trọng */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 40px;            /* Tăng độ dày đệm bên trong */
+    gap: 50px;                /* Khoảng cách rộng rãi giữa 2 cột */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Tạo hiệu ứng bóng đổ cho hộp nổi lên */
+}
+
+/* Định dạng chung cho mỗi cột chiếm đúng 50% diện tích */
+.cv-column {
+    flex: 1;                  /* Chia đều mỗi bên 1 nửa */
+}
+
+/* Tạo đường vạch kẻ ngăn cách ở giữa theo đúng bản vẽ tay */
+.column-left {
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+    padding-right: 30px;      /* Khoảng cách từ chữ đến đường kẻ */
+}
+
+/* Định dạng tiêu đề cột Kinh nghiệm / Dự án */
+.cv-column h2 {
+    font-size: 22px;
+    color: #ff6b00;           /* Màu cam tiệp với logo chữ T */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #ff6b00;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+/* Danh sách số thứ tự */
+.cv-column ol {
+    padding-left: 20px;
+}
+
+.cv-column ol li {
+    margin-bottom: 18px;
+    line-height: 1.6;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Tăng kích thước chữ cho tất cả các đường link trong thanh menu */
+/* Tăng kích thước chữ cho tất cả các đường link trong thanh menu */
+.nav-links a,
+.nav-links .nav-link {
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.5px !important;
+    transition: all 0.3s ease;
+
+    /* SỬA LẠI ĐOẠN NÀY: Xóa padding cũ đi, thay bằng margin */
+    margin-left: -10px !important;  /* Khoảng cách chữ sau cách chữ trước 15px */
+    margin-right: -5px !important; /* Khoảng cách chữ trước cách chữ sau 15px */
+}
+
+
+/* Thu hẹp chiều cao của thanh menu trên cùng */
+.blog-header-banner {
+    /* Giảm padding trên và dưới xuống còn 5px (hoặc 8px) để thanh menu mỏng lại */
+    padding-top: 28px !important;   
+    padding-bottom: 28px !important;
+    
+    /* Xóa bỏ chiều cao cố định nếu template gốc có cài (để nó tự thu gọn theo chữ) */
+    height: auto !important; 
+    min-height: auto !important;
+}
+
+/* Giữ cho logo thu nhỏ tỷ lệ thuận theo thanh menu mới */
+.blog-header-banner .site-logo {
+    height: 35px !important; /* Giảm nhẹ chiều cao logo xuống một chút cho vừa vặn */
+    width: auto !important;
+}
+
+/* Sửa lại đoạn CSS từ dòng 134 đến 142 của bạn */
+body:has(#CV) main
+body:has(#CV) {
+    padding-top: 20px !important; /* Chỉ chừa đúng 20px ô trống cho menu phía trên */
+    margin-top: 0 !important;
+}
+
+/* Thêm đoạn này để ép trang CV khít vừa vặn 1 màn hình và biến mất thanh cuộn dọc */
+body:has(#CV) {
+    height: 100vh !important;
+    max-height: 100vh !important;
+    overflow-y: hidden !important; /* Xóa hoàn toàn thanh cuộn bên phải */
+}
+
+/* Khung bọc toàn bộ nội dung CV (để nó tự thu gọn chiều cao cho vừa màn hình) */
+.cv-container {
+    max-width: 1100px;
+    margin: 0 auto !important; /* Căn giữa tự động hai bên lề */
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-normal) 0;
+    list-style: none;
+}
+
+/* Xóa bỏ dấu chấm tròn mặc định của danh sách mục lớn */
+.cv-column .cv-main-list {
+    list-style: none !important;
+    padding-left: 0 !important;
+}
+
+
+/* ĐOẠN QUAN TRỌNG: Thiết lập khoảng cách tách biệt giữa Khối 1, Khối 2 và Khối 3 */
+.cv-column {
+    margin-bottom: 45px !important; /* Toàn bộ Khối 1 sẽ đẩy Khối 2 xuống dưới 45px */
+    position: relative;
+    padding-left: 15px;
+    border-left: 2px solid rgba(255, 255, 255, 0.15); /* Tạo đường trục dọc Timeline mờ giống ảnh mẫu */
+}
+
+/* Định dạng cho tiêu đề mục lớn (Chữ màu cam/trắng tùy bạn chỉnh) */
+.cv-item-title {
+    font-size: 16px !important;
+    font-weight: bold !important;
+    color: #ff6b00 !important; /* Đổi màu cam tiệp với logo chữ T */
+    margin-top: 0 !important;
+    margin-bottom: 6px !important; /* Tiêu đề nằm sát cạnh ngày tháng */
+}
+
+/* Định dạng dòng ngày tháng nằm sát nội dung */
+.cv-item a {
+    display: inline-block;
+    font-size: 14px;
+    margin-bottom: 1px !important; /* Ngày tháng cách dòng nội dung đầu tiên 12px */
+    text-decoration: none;
+}
+
+/* Các dòng chữ gạch đầu dòng bên trong khối xếp khít nhau gọn gàng */
+.cv-item p {
+    margin-top: 0 !important;
+    margin-bottom: 6px !important;  /* Các dòng chữ nhỏ chỉ cách nhau 6px thành 1 cụm liên mạch */
+    padding-left: 10px !important;  /* Thụt lề nhẹ cho chữ ngay ngắn */
+    line-height: 1;
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: normal !important;
+}
+
+/* ===== Tách các khối kinh nghiệm ra xa nhau ===== */
+.cv-item {
+    margin-bottom: 35px;        /* Khoảng cách giữa các khối */
+    padding-bottom: 25px;       /* Padding dưới mỗi khối */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Đường kẻ ngăn cách */
+}
+
+.cv-item:last-child {
+    border-bottom: none;        /* Khối cuối không cần đường kẻ */
+    margin-bottom: 0;
+}
+
+.cv-item li {
+    margin-bottom: 35px !important;
+}
+
+.cv-item {
+    font-size: 10px !important;       /* Tăng kích thước chữ to rõ ràng bằng trang chủ */
+    font-weight: 500 !important;      /* Tăng độ đậm nét của chữ */
+    letter-spacing: 1px !important; /* Độ giãn chữ tinh tế */
+    
+    /* Khoảng cách lề hai bên (Để tầm 20px đến 25px là vừa đẹp, đừng để 160px kẻo chữ bị nhảy xuống hàng) */
+    margin-left: 20px !important;     
+    margin-right: 20px !important;
+    
+    display: inline-block !important;
+}
+
+/* Áp dụng nếu Toàn đang dùng thẻ <p> cho từng dòng */
+.cv-item p {
+    margin-top: 0 !important;
+    margin-bottom: 10px !important; /* Tăng từ 6px lên 14px để các dòng trên dưới tách nhau ra */
+    line-height: 1.5 !important;    /* Tăng độ cao dòng lên 1.8 giúp chữ trong cùng 1 dòng không bị dính vào nhau */
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Áp dụng nếu Toàn đang dùng cấu trúc danh sách <ul><li> cho các dòng nhỏ */
+.cv-item ul li {
+    margin-bottom: 14px !important; /* Đẩy khoảng cách dòng dưới cách xa dòng trên 14px */
+    line-height: 1.5 !important;    /* Giúp các dòng văn bản dài khi xuống hàng nhìn thoáng hơn */
+}
+
+
+/* 1. KHUNG CHỨA MỖI MỤC CV (ĐÃ THÊM TRỤC DỌC TIMELINE) */
+.cv-item {
+    position: relative;
+    margin-bottom: 45px !important; /* Đẩy khối 1 cách xa khối 2 */
+    padding-left: 30px !important;  /* Tạo khoảng trống bên trái để chừa chỗ cho thanh dọc và chấm tròn */
+}
+
+/* 2. TỰ ĐỘNG VẼ THANH DỌC MÀU XANH NGỌC */
+.cv-item::before {
+    content: "";
+    position: absolute;
+    top: 0px;       /* Bắt đầu thanh dọc từ ngang tầm tiêu đề */
+    left: -30px;      /* Vị trí căn lề trái */
+    width: 2px;     /* Độ dày của thanh dọc */
+    height: 90%;   /* Thanh dọc kéo dài xuống hết chiều cao của cả khối */
+    background: #d51111 !important; /* Mã màu xanh ngọc (Cyan/Teal) giống ảnh mẫu của bạn */
+    opacity: 0.8;
+}
+
+/* Mẹo: Xóa thanh dọc của mục cuối cùng để không bị thừa ra dưới đáy */
+.cv-item:last-child::before {
+    height: 90%;   /* Mục cuối cùng thì thanh dọc chỉ ngắn lại vừa bằng tầm tiêu đề */
+}
+
+/* 3. TỰ ĐỘNG VẼ CHẤM TRÒN XOAY TRÊN ĐẦU THANH DỌC */
+.cv-item::after {
+    content: "";
+    position: absolute;
+    top: 10px;       /* Nằm ngang bằng với chữ tiêu đề */
+    left: -38px;      /* Căn chỉnh tâm trùng khít vào thanh dọc */
+    width: 10px;     /* Kích thước chấm tròn */
+    height: 8px;
+    background: #0d1117; /* Màu nền tối trùng với màu nền web để tạo hiệu ứng rỗng ruột */
+    border: 5px solid #ff0000 !important; /* Viền màu xanh ngọc */
+    border-radius: 50%; /* Biến hộp vuông thành hình tròn */
+    z-index: 2;     /* Đảm bảo chấm tròn nổi lên trên thanh dọc */
+}
+
+
+.back-btn {
+    display: inline-block;
+    color: #888888;
+    text-decoration: none;
+    font-size: 20px;
+    
+    /* Thêm các thuộc tính dưới đây */
+    margin-top: 50px;      /* Tạo khoảng cách rộng rãi với nội dung phía trên */
+    margin-bottom: 40px;   /* Tạo khoảng cách vừa phải với dàn icon mạng xã hội */
+    text-align: center;    /* Hỗ trợ căn giữa chữ */
+}
+
+.back-btn:hover {
+    color: #ff3333;
+}
+
+.header {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 120px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+}
+
+.header {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 500px; 
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+
+}
+</style>
+    </style>
+</head>
+
+<body class="subpage">
+  <div id="particles-js"></div>
+
+
+    <!-- ***** Header ***** -->
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <div class="logo-box-container">
+            <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
+              <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
+            </a>
+          </div>
+          <li class="nav__item" data-i18n="about_index_1">
+            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_2">
+            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_3">
+            <a href="../CV/cv2_index.html" style="color: #FF5551;" class="nav__link" data-i18n="cv">Xem CV</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_4">
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
+          </li>
+          <li class="nav--item" data-i18n="about_index_5">
+            <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Nhật kí</a>
+          </li>
+          <li class="nav__item" data-i18n="skills_index_6">
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <!-- 2. KHU VỰC NỘI DUNG CV CHÍNH (CĂN GIỮA MÀN HÌNH) -->
+    <main class="cv-container">
+        <h1 class="cv-title" data-i18n="cv_index_6"> -My CV- </h1>
+        
+        <!-- Khung lớn chia đôi bố cục theo bản vẽ -->
+        <div class="cv-content-box">
+            
+            <!-- Cột bên trái: Kinh nghiệm làm việc -->
+            <div class="cv-column column-left">
+                <h2 data-i18n="cv_index_7">Work Experience</h2>
+                <ol>
+                    <div class="cv-item">
+                    <!--<li>PCB LAYOUT DESIGN - THIẾT KẾ MẠCH PCB BẰNG PHẦN MỀM ALTIUM DESIGNER</li>-->
+                        <li style="color: #ff3333;" data-i18n="cv_index_8">PCB LAYOUT DESIGN - PCB CIRCUIT DESIGN USING ALTIUM DESIGNER SOFTWARE</li>
+                        <a style="color: #ff3333;">🗓️ 22/10/2025 - 27/12/2025</a>
+                        <p data-i18n="cv_index_9"> - We created a single-sided PCB in 23 days using Altium Designer software while working on a group project for the PCB Layout Design course</p>
+                        <p data-i18n="cv_index_10"> - Observe, test, and fix errors in the Schematic library and Layout drawing to avoid faulty circuit traces before production.</p>
+                        <p data-i18n="cv_index_11"> - Assisting the team in the process of searching for schematic libraries to shorten implementation time. This resulted in a 20% faster implementation time.</p>
+                        <p data-i18n="cv_index_12"> - Research and development for simpler PCB layouts with more compact component placement.</p>
+                        <p data-i18n="cv_index_13"> - Answer questions and provide customer support to resolve issues that arise during the use of PCBs and Altium Designer software.</p>
+                        <p data-i18n="cv_index_14"> - Document customer feedback to optimize circuits and convert them into production requirements.</p>
+                        <p data-i18n="cv_index_14.1"> - Number of people: 3 / 1 group	|</p>
+                        <p data-i18n="cv_index_14.2"> - Role: Person in charge of checking product errors</p>
+                    </div>
+                    
+
+                    <div class="cv-item">   
+                        <li style="color: #ff3333;" data-i18n="cv_index_15">QUARTUS II - CHIP SIMULATION SOFTWARE</li>
+                        <a style="color: #ff3333;">🗓️ 02/02/2026 - 16/03/2026</a>
+                        <p data-i18n="cv_index_16"> - Simulate chips using Quartus II software with device 5CSXFC6D6F31C6</p>
+                        <p data-i18n="cv_index_17"> - Research and search for documentation about chip simulation</p>
+                        <p data-i18n="cv_index_18"> - Run programs and document all simulation steps to identify errors in the chip simulation process</p>
+                        <p data-i18n="cv_index_19"> - Receive feedback from others about the chip simulation process</p>
+                    </div>
+                    
+
+                    <div class="cv-item">
+                        <li style="color: #ff3333;" data-i18n="cv_index_20">STM32F103C8T6 - STM32 MICROCONTROLLER WITH DETAILED CHIP IDENTIFICATION CODE: F103C8T6</li>
+                        <a style="color: #ff3333;">🗓️ 26/9/2025 - 02/10/2025</a>
+                        <p data-i18n="cv_index_21"> - Research, find relevant documentation, and learn from experienced microcontroller programmers.</p>
+                        <p data-i18n="cv_index_22"> - Program the STM32 F103C8T6, encountering many errors during the process but successfully resolving them and completing the programming within 2 hours and 48 minutes on 01/10/2025</p>
+                        <p data-i18n="cv_index_23"> - Develop and add code to the microcontroller to increase its compatibility with other electronic devices</p>
+                    </div>
+                </ol>
+            </div>
+            
+            <!-- Cột bên phải: Dự án -->
+            <div class="cv-column column-right">
+                <h2 data-i18n="cv_index_26">Projects</h2>
+                <ol>
+                    <div class="cv-item">
+                        <li style="color: #ff3333;" data-i18n="cv_index_27">CDIO 2026 CIRCUIT DESIGN</li>
+                        <a style="color: #ff3333;">🗓️ 11/05/2026</a>
+                        <p data-i18n="cv_index_28"> - Participated in the CDIO 2026 circuit design project of UNITEC JAPAN Joint Stock Company, held at Duy Tan University - Hoa Khanh Nam campus_120 Hoang Minh Thao, Lien Chieu District, Da Nang CIty.</p>
+                        <p data-i18n="cv_index_29">Number of participants: 74 people</p>
+                        <p data-i18n="cv_index_30">Role: Contest Participant</p>
+                        <p data-i18n="cv_index_31">Unit of Implementation - Project Organizer: UNITEC JAPAN Joint Stock Company</p>
+                    </div>
+
+                    <div class="cv-item">
+                        <li style="color: #ff3333;" data-i18n="cv_index_29">LINUX PERMISSION SYMBOL CONVERSION TOOL</li>
+                        <a style="color: #ff3333;">🗓️ 07/05/2026 - 12/05/2026</a>
+                        <p data-i18n="cv_index_35">A tool for converting data between Symbols -> Octals and Octals -> Symbols. Runs directly on the computer using the Python programming language.</p>
+                        <p data-i18n="cv_index_36">Team Size: 1</p>
+                        <p data-i18n="cv_index_37">Role: Project Owner - Developer</p>
+                    </div>
+
+                    <div class="cv-item">
+                        <li style="color: #ff3333;" data-i18n="cv_index_28">WEBSITE</li>
+                        <a style="color: #ff3333;">🗓️ 12/05/2025 - Now</a>
+                        <p data-i18n="cv_index_32">Built a website using HTML, CSS, and JavaScript</p>
+                        <p data-i18n="cv_index_33">https://toannguyen1521.github.io/portfolio-website/</p><a class="https://toannguyen1521.github.io/portfolio-website/"></a>
+                        <p data-i18n="cv_index_34">Role: Website Developer</p>
+                    </div>
+                </ol>
+            </div>
+        </div>
+        <a href="./cv2_index.html" class="back-btn" data-i18n="cv_cer2">← Back CV Page</a>
+    </main>
+
+    <!-- Đoạn mã <script> xử lý nhạc nền tự phát Toàn copy từ file LPEFC2 dán vào đây -->
+
+<!-- ***** Footer ***** -->
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://x.com/NguyenToan13312/" title="Link to X Profile">
+            <img src="../images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/toannguyen1521" title="Link to Github Profile">
+            <img src="../images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.facebook.com/nguyen.toann.200662009" title="Link to Facebook Profile">
+            <img src="../images/Facebook.svg.webp" class="footer__social-image" alt="Facebook">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.tiktok.com/@toan111" title="Link to TikTok Profile">
+            <img src="../images/TikTok.png" class="footer__social-image" alt="TikTok">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://t.me/Toan13312" title="Link to Telegram Profile">
+            <img src="../images/telegram.png" class="footer__social-image" alt="Telegram">
+          </a>
+        </li>
+      </ul>
+      <p data-i18n="cv_index_40">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="cv_index_41">Toan</a>.</p>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" title="Back to Top">
+    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
+  </a>
+
+  <script src="../index.js"></script>
+ <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.6, "direction": "right", "random": true, "straight": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "events": { "onhover": { "enable": true, "mode": "bubble" } },
+        "modes": { "bubble": { "distance": 80, "size": 6, "duration": 2, "opacity": 0.8, "speed": 3 } }
+      }
+    });
+
+  </script>
+
+  <div id="music-control" class="music-fixed-btn">
+    <div class="music-info">
+        <!-- Thay thế icon nốt nhạc cũ bằng khối sóng âm này -->
+        <div id="music-wave" class="music-wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+        <span id="music-text" data-i18n="cv_index_37">Âm nhạc: Đang phát</span>
+    </div>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+    <span id="volume-percent" class="volume-percent">30%</span>
+</div>
+
+
+
+
+<!-- Nhạc riêng cho trang chủ -->
+<audio id="bg-music" src="../music/Fiction Sad Beat - Piano Beat Instrumental - Diby Production (mp3cut.net).mp3" loop=""></audio>
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+
+</script>
+
+    <!-- Các đoạn script xử lý nhạc nền của bạn ở trên ... -->
+
+    <!-- ======================================================== -->
+    <!-- CHÈN THÊM 2 DÒNG NÀY VÀO DƯỚI CÙNG CỦA FILE (TRƯỚC THẺ </body>) -->
+    
+    <!-- 1. Nhúng file thư viện Particles gốc (Nhớ dùng ../ vì file CV nằm trong thư mục con) -->
+            <script src="../particles.min.js"></script>
+
+
+<script src="../jslang.js"></script>
+
+
+
+
+</body></html>

@@ -1,18 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="../images/logo.png" />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="../images/logo.gif.png">
   <title>Skills | Nguyen Toan</title>
-  <meta name="description" content="Skills of Nguyen Toan - IC/VLSI Design Student & Cybersecurity Enthusiast" />
-  <link rel="stylesheet" href="../index.css" />
+  <meta name="description" content="Skills of Nguyen Toan - IC/VLSI Design Student & Cybersecurity Enthusiast">
+  <link rel="stylesheet" href="../index.css">
   <script src="../particles.min.js"></script>
 </head>
 
-<body>
+<body class="subpage">
   <div id="particles-js"></div>
+
+  <style>
+.header {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 120px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+
+}
+
+.header {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 500px; 
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+}
+
+/* Container bao ngoài cả cụm ảnh 2x2 và video */
+.media-container {
+    display: flex;
+    gap: 20px;          /* Khoảng cách giữa khối 4 ảnh và khối video */
+    align-items: top;   /* Căn hàng từ phía trên */
+    flex: 2;            /* Cho phép chiếm phần không gian còn lại bên phải của Text */
+    width: 100%;
+}
+
+/* Khối chứa 4 ảnh xếp thành 2 hàng, mỗi hàng 2 ảnh như cửa sổ */
+.image-window-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Chia làm 2 cột bằng nhau */
+    gap: 10px;                             /* Khoảng cách giữa các ô kính cửa sổ */
+    flex: 6;                               /* Tự động co giãn theo không gian */
+}
+
+/* Đảm bảo các ảnh trong lưới tự động khít ô */
+.image-window-grid .work_image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;                     /* Giúp ảnh không bị móp méo nếu tỉ lệ lệch nhau */
+}
+
+/* Khối chứa video bên phải */
+.video-box {
+    flex: 1.2;
+    max-width: 400px;                       /* Tự động co giãn bằng kích thước với khối ảnh */
+}
+
+/* Đảm bảo video hiển thị chuẩn kích thước */
+.video-box .work_image {
+    width: 350%;
+    height: auto;
+}
+
+
+</style>
 
   <!-- ***** Header ***** -->
   <header class="header" role="banner" id="top">
@@ -21,21 +88,30 @@
         <ul class="nav__items">
           <div class="logo-box-container">
             <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
-              <img src="../images/logo.png" alt="Logo" class="site-logo">
+              <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
             </a>
           </div>
-          <li class="nav__item">
-            <a href="../about/about_index.html" class="nav__link">About</a>
+          <li class="nav__item" data-i18n="cv_index_1">
+            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
           </li>
-          <li class="nav__item">
-            <a href="../skills/skills_index.html" class="nav__link">Skills</a>
+          <li class="nav__item" data-i18n="cv_index_2">
+            <a href="../skills/skills_index.html" style="color: #FF5551;" class="nav__link" data-i18n="skills">Kĩ Năng</a>
           </li>
-          <li class="nav__item">
-            <a href="../contact/contact_index.html" class="nav__link">Contact</a>
+          <li class="nav__item" data-i18n="cv_index_3">
+            <a href="../CV/cv2_index.html" class="nav__link" data-i18n="cv">Xem CV</a>
           </li>
-          <li class="nav__item">
-            <a href="./myblog/myblog_index.html" class="nav__link">My Blog</a>
+          <li class="nav__item" data-i18n="cv_index_4">
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
           </li>
+          <li class="nav--item" data-i18n="cv_index_5">
+            <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Nhật kí</a>
+          </li>
+          <li class="nav__item" data-i18n="skills_index_6">
+            <button onclick="toggleLang()" id="lang-btn" style="background: none; border: 1px solid rgba(255,255,255,0.4); 
+            color: white; padding: 4px 12px; border-radius: 4px; 
+            cursor: pointer; font-size: 1.4rem; letter-spacing: 1px; margin-left: 20px;" data-i18n="cv_index_7">
+            EN
+          </button>
         </ul>
       </nav>
     </div>
@@ -46,92 +122,96 @@
     <!-- ***** Skills ***** -->
     <section class="skills" id="skills">
       <div class="row">
-        <h2>Skills</h2>
+        <h2 data-i18n="skills_index_8">Skills</h2>
         <div class="skills__boxes">
-
           <div class="work__box">
             <div class="work__text">
-              <h3>Experience in Semiconductor</h3>
-              <p>Participate in microchip projects organized by the School and UNITEC JAPAN CO., LTD.</p>
-              <p>Self-studied STM32 microcontroller programming and embedded systems</p>
-              <p>Samsung Innovation Campus</p>
-              <p>Testing and troubleshooting electronic circuit boards</p>
-              <p>Simulating chips and temperatures</p>
-              <p>Designed single-sided PCB layouts (LED/resistor circuits) using Altium Designer software.</p>
+              <h3 data-i18n="skills_index_9">Experience in Semiconductor</h3>
+              <p data-i18n="skills_index_10">Participate in microchip projects organized by the School and UNITEC JAPAN CO., LTD.</p>
+              <p data-i18n="skills_index_11">Self-studied STM32 microcontroller programming and embedded systems</p>
+              <p data-i18n="skills_index_12">Samsung Innovation Campus</p>
+              <p data-i18n="skills_index_13">Testing and troubleshooting electronic circuit boards in Altium Designer software</p>
+              <p data-i18n="skills_index_14">Simulating chips</p>
+              <p data-i18n="skills_index_15">Designed PCB layouts (LED/resistor circuits) using Altium Designer software.</p>
               <ul class="work__list">
-                <li>Python</li>
-                <li>Verilog</li>
+                <li data-i18n="skills_index_16">Python</li>
+                <li data-i18n="skills_index_17">Verilog</li>
               </ul>
-              <div class="work__links">
-                <a href="https://github.com/toannguyen1521" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/toannguyen1521" title="View Source Code" target="_blank">
-                  <img src="../images/github.svg" class="work__code" alt="GitHub">
-                </a>
+            </div>
+            <!-- Bọc cả cụm ảnh và video vào chung một nhóm để quản lý layout ngang -->
+          <div class="media-container">
+              <!-- Khung chứa 4 ô ảnh xếp dạng cửa sổ 2x2 -->
+              <div class="image-window-grid">
+                  <img src="../images/MLED.png" class="work_image" alt="Project 1.1-PCB Layout Designer">
+                  <img src="../images/MLEDPCB.png" class="work_image" alt="Project 1.2-PCB Layout Designer">
+                  <!-- Thêm 2 ảnh mới của bạn vào đây -->
+                  <img src="../images/MDHTT.png" class="work_image" alt="Project 1.3">
+                  <img src="../images/MDHTTPCB.png" class="work_image" alt="Project 1.4">
               </div>
+              <!-- Khối chứa video bên phải -->
+              <div class="video-box">
+                  <video class="work_image" controls="">
+                      <source src="../video/7892737922242.mp4" type="video/mp4">
+                  </video>
+                </div>
+          </div>
+          </div>
+          <div class="work__box">
+            <div class="work__text">
+              <h3 data-i18n="skills_index_19">Cybersecurity & Systems</h3>
+              <p data-i18n="skills_index_20">Self-taught OS installation and configuration (Windows, Kali Linux).</p>
+              <p data-i18n="skills_index_21">Conducted static and dynamic malware analysis using Ghidra, x32dbg, ProcMon, and FakeNet-NG.</p>
+              <p data-i18n="skills_index_22">Analyzed real-world ransomware samples (GandCrab, LockBit Black, Expiro) in isolated lab environments.</p>
+              <p data-i18n="skills_index_23">Studied network traffic analysis using Wireshark.</p>
+              <p data-i18n="skills_index_24">Built and maintained a dedicated malware analysis lab using VMware Workstation.</p>
+              <ul class="work__list">
+                <li data-i18n="skills_index_25">Ghidra</li>
+                <li data-i18n="skills_index_26">x32dbg</li>
+                <li data-i18n="skills_index_27">Wireshark</li>
+                <li data-i18n="skills_index_28">VMware</li>
+                <li data-i18n="skills_index_29">Kali Linux</li>
+              </ul>
             </div>
             <div class="work__image-box">
-              <img src="../images/project-1.png" class="work__image" alt="Project 1-PCB Layout Designer" />
-            </div>
-            <div class="work__image-box">
-              <video class="work__image" controls>
-                <source src="../video/7892737922242.mp4" type="video/mp4" />
-              </video>
+              <img src="../images/project-2.png" class="work__image" alt="Cybersecurity Lab">
             </div>
           </div>
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Cybersecurity & Systems</h3>
-              <p>Self-taught OS installation and configuration (Windows, Kali Linux).</p>
-              <p>Conducted static and dynamic malware analysis using Ghidra, x32dbg, ProcMon, and FakeNet-NG.</p>
-              <p>Analyzed real-world ransomware samples (GandCrab, LockBit Black, Expiro) in isolated lab environments.</p>
-              <p>Studied network traffic analysis using Wireshark.</p>
-              <p>Built and maintained a dedicated malware analysis lab using VMware Workstation.</p>
+              <h3 data-i18n="skills_index_31">Time Management</h3>
+              <p data-i18n="skills_index_32">Clearly allocate time across academic, project, and personal development tasks.</p>
+              <p data-i18n="skills_index_33">Prioritize deadlines effectively using structured task management systems.</p>
+              <p data-i18n="skills_index_34">Consistently deliver assignments on time while maintaining quality standards.</p>
               <ul class="work__list">
-                <li>Ghidra</li>
-                <li>x32dbg</li>
-                <li>Wireshark</li>
-                <li>VMware</li>
-                <li>Kali Linux</li>
+                <li data-i18n="skills_index_35">Google Calendar</li>
+                <li data-i18n="skills_index_36">Todoist</li>
+                <li data-i18n="skills_index_37">Microsoft To Do</li>
               </ul>
-              <div class="work__links">
-                <a href="https://github.com/toannguyen1521" target="_blank" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/toannguyen1521" title="View Source Code" target="_blank">
-                  <img src="../images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
             </div>
             <div class="work__image-box">
-              <img src="../images/project-2.png" class="work__image" alt="Cybersecurity Lab" />
+              <img src="../images/project-3.png" class="work__image" alt="Project 3">
             </div>
           </div>
 
           <div class="work__box">
             <div class="work__text">
-              <h3>Time Management</h3>
-              <p>• Clearly allocate time across academic, project, and personal development tasks.</p>
-              <p>• Prioritize deadlines effectively using structured task management systems.</p>
-              <p>• Consistently deliver assignments on time while maintaining quality standards.</p>
+              <h3 data-i18n="skills_index_38">Certifications</h3>
               <ul class="work__list">
-                <li>Google Calendar</li>
-                <li>Todoist</li>
-                <li>Microsoft To Do</li>
+                <li data-i18n="skills_index_40">Certificate's Simplilearn C++</li>
+                <li data-i18n="skills_index_41">Issued on date: 09/07/2026 (MM/DD/YYYY)</li>
+                <li data-i18n="skills_index_42">View  Certificate: <a href="https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf" title="Link Certificate">https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf</a>
               </ul>
-              <div class="work__links">
-                <a href="#" class="link__text">
-                  Visit Site <span>&rarr;</span>
-                </a>
-                <a href="https://github.com/toannguyen1521" title="View Source Code" target="_blank">
-                  <img src="../images/github.svg" class="work__code" title="View Source Code" alt="GitHub">
-                </a>
-              </div>
+              <ul class="work__list">
+                <li data-i18n="skills_index_43">Certificate's Anthropic</li>
+                <li data-i18n="skills_index_44">Issued on date: 11/08/2026 (MM/DD/YYYY)</li>
+                <li data-i18n="skills_index_45">View  Certificate: <a href="https://verify.skilljar.com/c/psnygmixr237" title="Link Certificate">https://verify.skilljar.com/c/psnygmixr237</a>
+              </ul>
             </div>
             <div class="work__image-box">
-              <img src="../images/project-3.png" class="work__image" alt="Project 3" />
+              <img src="../images/certifiacate.png" class="work__image" alt="Certificate">
+              <p></p>
+              <img src="../images/AnthropicCer.png" class="work__image" alt="Certificate">
             </div>
           </div>
 
@@ -171,12 +251,12 @@
           </a>
         </li>
       </ul>
-      <p>&copy; 2026 - Template designed & developed by <a class="link" href="../index.html">Toan</a>.</p>
+      <p data-i18n="skills_index_39">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="skills_index_40">Toan</a>.</p>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+  <a href="#" class="back-to-top" title="Back to Top">
+    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
   </a>
 
   <script src="../index.js"></script>
@@ -197,7 +277,139 @@
       }
     });
   </script>
-</body>
-<!-- trong about/index.html, skills/index.html, clients/index.html, contact/index.html -->
-<body class="subpage">
-</html>
+
+<div id="music-control" class="music-fixed-btn">
+    <div class="music-info">
+        <!-- Thay thế icon nốt nhạc cũ bằng khối sóng âm này -->
+        <div id="music-wave" class="music-wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+        <span id="music-text" data-i18n="skills_index_41">Âm nhạc: Đang phát</span>
+    </div>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+    <span id="volume-percent" class="volume-percent">30%</span>
+</div>
+
+
+
+
+<!-- Nhạc riêng cho trang chủ -->
+<audio id="bg-music" src="../music/Fiction Sad Beat - Piano Beat Instrumental - Diby Production (mp3cut.net).mp3" loop=""></audio>
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+
+</script>
+
+<script src="../jslang.js"></script>
+
+
+
+
+
+</body><!-- trong about/index.html, skills/index.html, clients/index.html, contact/index.html --></html>

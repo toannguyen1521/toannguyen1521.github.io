@@ -1,18 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="../images/logo.png" />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="../images/logo.png">
   <title>About | Nguyen Toan</title>
-  <meta name="description" content="About Nguyen Toan - IC/VLSI Design Student & Cybersecurity Enthusiast" />
-  <link rel="stylesheet" href="../index.css" />
+  <meta name="description" content="About Nguyen Toan - IC/VLSI Design Student &  Cybersecurity Enthusiast">
+  <link rel="stylesheet" href="../index.css">
   <script src="../particles.min.js"></script>
 </head>
 
-<body>
+<body class="subpage">
   <div id="particles-js"></div>
+
+<style>
+.header {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 200px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+
+}
+
+.header {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 500px; 
+  font-size: 2.5rem;
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+}
+
+
+</style>
+  
 
   <!-- ***** Header ***** -->
   <header class="header" role="banner" id="top">
@@ -21,21 +54,30 @@
         <ul class="nav__items">
           <div class="logo-box-container">
             <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
-              <img src="../images/logo.png" alt="Logo" class="site-logo">
+              <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
             </a>
           </div>
-          <li class="nav__item">
-            <a href="../about/about_index.html" class="nav__link">About</a>
+          <li class="nav__item" data-i18n="about_index_1">
+            <a href="../about/about_index.html" style="color: #FF5551;" class="nav__link" data-i18n="about">Giới Thiệu</a>
           </li>
-          <li class="nav__item">
-            <a href="../skills/skills_index.html" class="nav__link">Skills</a>
+          <li class="nav__item" data-i18n="about_index_2">
+            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
           </li>
-          <li class="nav__item">
-            <a href="../contact/contact_index.html" class="nav__link">Contact</a>
+          <li class="nav__item" data-i18n="about_index_3">
+            <a href="../CV/cv2_index.html" class="nav__link" data-i18n="cv">Xem CV</a>
           </li>
-          <li class="nav--item">
-            <a href="../myblog/myblog_index.html" class="nav__link">My Blog</a>
+          <li class="nav__item" data-i18n="about_index_4">
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
           </li>
+          <li class="nav--item" data-i18n="about_index_5">
+            <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Nhật kí</a>
+          </li>
+          <li class="nav__item" data-i18n="skills_index_6">
+            <button onclick="toggleLang()" id="lang-btn" style="background: none; border: 1px solid rgba(255,255,255,0.4); 
+            color: white; padding: 4px 12px; border-radius: 4px; 
+            cursor: pointer; font-size: 1.4rem; letter-spacing: 1px; margin-left: 20px;" data-i18n="cv_index_7">
+            EN
+          </button>
         </ul>
       </nav>
     </div>
@@ -44,26 +86,107 @@
   <main role="main">
 
     <!-- ***** About ***** -->
+    <div>
     <section class="about" id="about">
       <div class="row">
-        <h2>About Me</h2>
+        <h2 data-i18n="about_index_6">About Me</h2>
         <div class="about__content">
           <div class="about__text">
-            <p>Countryside: Hoai Duc District, Ha Noi City, Viet Nam</p>
-            <p>Location Currently: Hoa Khanh Nam, Lien Chieu District, Da Nang City, Viet Nam</p>
-            <p>Major: Semiconductor Design</p>
-            <p>Date of Birth: 2006</p>
-            <p>
-              I am a detail-oriented IC/VLSI Design student at Duy Tan University, with a strong foundation in digital logic, embedded systems, and semiconductor simulation. Beyond my academic work, I actively pursue independent research in cybersecurity — including malware analysis and network security. I thrive under deadlines, prioritize quality in every deliverable, and am always looking to grow through hands-on projects.
+            <p data-i18n="about_index_0" style="font-weight: 1000; font-size: 4.3rem;">Toan</p>
+            <p data-i18n="about_index_7">Countryside: Hoai Duc District, Ha Noi City, Viet Nam</p>
+            <p data-i18n="about_index_8">Location Currently: Hoa Khanh Nam, Lien Chieu District, Da Nang City, Viet Nam</p>
+            <p data-i18n="about_index_9">Major: Semiconductor Design</p>
+            <p data-i18n="about_index_10">Date of Birth: 2006</p>
+            <p data-i18n="about_index_11">
+              I am a detail-oriented IC/VLSI Design student at Duy Tan University, with a strong foundation in digital logic, embedded systems, and semiconductor simulation. I pursue independent research 
+              in cybersecurity — including malware analysis and network security to protect myself and system. I thrive under deadlines, prioritize quality in every deliverable, and am always looking to grow through hands-on projects
             </p>
             <!-- <a href="#" class="btn">My Resume</a> -->
           </div>
           <div class="about__photo-container">
-            <img class="about__photo" src="../images/I-like-this-picture.jpg" alt="" />
+            <img class="about__photo" src="../images/I-like-this-picture.jpg" alt="">
           </div>
         </div>
       </div>
     </section>
+    </div>
+
+    <!-- ***** Hobby ***** -->
+    <section class="hobby" id="hobby">
+      <div class="row">
+        <h2 class="hobby__title" data-i18n="hobby_index_12">My Hobbies</h2>
+        <div class="hobby__card">
+          <div class="hobby__grid">
+
+            <div class="hobby__item">
+              <div class="hobby__icon">📚</div>
+              <span data-i18n="hobby_index_13">Reading books about Technology, Social, Economic and Financial</span>
+            </div>
+
+            <div class="hobby__item">
+              <div class="hobby__icon">✈️</div>
+              <span data-i18n="hobby_index_16">Travel</span>
+            </div>
+
+            <div class="hobby__item">
+              <div class="hobby__icon">💻</div>
+              <span data-i18n="hobby_index_14">Code</span>
+            </div>
+
+            <div class="hobby__item">
+              <div class="hobby__icon">📖</div>
+              <span data-i18n="hobby_index_18">Find out, learn something new</span>
+            </div>
+
+            <div class="hobby__item">
+              <div class="hobby__icon">🎵</div>
+              <span data-i18n="hobby_index_15">Play to Music</span>
+            </div>
+
+            <div class="hobby__item">
+              <div class="hobby__icon">🚶</div>
+              <span data-i18n="hobby_index_17">Walking in the park</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ***** Workflow ***** -->
+    <section class="workflow" id="workflow">
+      <div class="row">
+        <h2 data-i18n="workflow_index_1">My Workflow</h2>
+        <div class="workflow__steps">
+
+          <div class="workflow__step">
+            <div class="workflow__number">01</div>
+            <h3 data-i18n="workflow_index_2">Understand Requirements</h3>
+            <p data-i18n="workflow_index_3">Clarify goals, constraints, and expected outcomes before starting.</p>
+          </div>
+
+          <div class="workflow__step">
+            <div class="workflow__number">02</div>
+            <h3 data-i18n="workflow_index_4">Research</h3>
+            <p data-i18n="workflow_index_5">Study datasheets, references, and existing solutions relevant to the problem.</p>
+          </div>
+
+          <div class="workflow__step">
+            <div class="workflow__number">03</div>
+            <h3 data-i18n="workflow_index_6">Design</h3>
+            <p data-i18n="workflow_index_7">Plan architecture, schematics, or code structure based on findings.</p>
+          </div>
+
+          <div class="workflow__step">
+            <div class="workflow__number">04</div>
+            <h3 data-i18n="workflow_index_8">Test & Refine</h3>
+            <p data-i18n="workflow_index_9">Validate results, debug issues, and iterate until quality standards are met.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    
 
   </main>
 
@@ -97,12 +220,12 @@
           </a>
         </li>
       </ul>
-      <p>&copy; 2026 - Template designed & developed by <a class="link" href="../index.html">Toan</a>.</p>
+      <p data-i18n="about_index_12">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="about_index_13">Toan</a>.</p>
     </div>
   </footer>
 
-  <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+  <a href="#" class="back-to-top" title="Back to Top">
+    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
   </a>
 
   <script src="../index.js"></script>
@@ -123,7 +246,141 @@
       }
     });
   </script>
-</body>
-<!-- trong about/index.html, skills/index.html, clients/index.html, contact/index.html -->
-<body class="subpage">
-</html>
+
+<div id="music-control" class="music-fixed-btn">
+    <div class="music-info">
+        <!-- Thay thế icon nốt nhạc cũ bằng khối sóng âm này -->
+        <div id="music-wave" class="music-wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+        <span id="music-text" data-i18n="about_index_14">Âm nhạc: Đang phát</span>
+    </div>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+    <span id="volume-percent" class="volume-percent">30%</span>
+</div>
+
+
+
+
+<!-- Nhạc riêng cho trang chủ -->
+<audio id="bg-music" src="../music/Fiction Sad Beat - Piano Beat Instrumental - Diby Production (mp3cut.net).mp3" loop=""></audio>
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+
+</script>
+
+<script src="../jslang.js"></script>
+
+
+
+
+
+</body><!-- trong about/index.html, skills/index.html, clients/index.html, contact/index.html --></html>

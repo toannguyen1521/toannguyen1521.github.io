@@ -1,153 +1,222 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="shortcut icon" type="image/png" href="../images/logo.png" />
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="../images/logo.gif.png">
   <title>My Blog | Nguyen Toan</title>
-  <meta name="description" content="Blog of Nguyen Toan - Life stories, project documentation and more." />
-  <link rel="stylesheet" href="../index.css" />
+  <meta name="description" content="Blog of Nguyen Toan - Life stories, project documentation and more.">
+  <link rel="stylesheet" href="../index.css">
   <script src="../particles.min.js"></script>
   <style>
-    /* ===== Blog Page Styles ===== */
-    .blog {
-      padding: 2rem 0 4rem;
-    }
+/* ===== Blog Page Styles ===== */
+.blog {
+padding: 2rem 0 4rem;
+}
 
-    .blog h2 {
-      color: var(--white);
-      margin-bottom: 3rem;
-    }
+.blog h2 {
+color: var(--white);
+margin-bottom: 3rem;
+}
 
-    .blog__grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 2rem;
-    }
+.blog__grid {
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 2rem;
+}
 
-    .blog__card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      cursor: pointer;
-    }
+.blog__card {
+background: rgba(255, 255, 255, 0.05);
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 8px;
+overflow: hidden;
+transition: transform 0.3s ease, border-color 0.3s ease;
+cursor: pointer;
+}
 
-    .blog__card:hover {
-      transform: translateY(-5px);
-      border-color: var(--pink);
-    }
+.blog__card:hover {
+transform: translateY(-5px);
+border-color: var(--pink);
+}
 
-    .blog__card-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-      display: block;
-      background: rgba(255,255,255,0.05);
-    }
+.blog__card-img {
+width: 100%;
+height: 200px;
+object-fit: cover;
+display: block;
+background: rgba(255,255,255,0.05);
+}
 
-    .blog__card-img-placeholder {
-      width: 100%;
-      height: 200px;
-      background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: rgba(255,255,255,0.3);
-      font-size: 3rem;
-    }
+.blog__card-img-placeholder {
+width: 100%;
+height: 200px;
+background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.1));
+display: flex;
+align-items: center;
+justify-content: center;
+color: rgba(255,255,255,0.3);
+font-size: 3rem;
+}
 
-    .blog__card-body {
-      padding: 1.5rem;
-    }
+.blog__card-body {
+padding: 1.5rem;
+}
 
-    .blog__card-tag {
-      font-size: 1.2rem;
-      color: var(--pink);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.5rem;
-    }
+.blog__card-tag {
+font-size: 1.2rem;
+color: var(--pink);
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 0.5rem;
+}
 
-    .blog__card-title {
-      font-size: 1.8rem;
-      color: var(--white);
-      font-weight: 600;
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
-    }
+.blog__card-title {
+font-size: 1.8rem;
+color: var(--white);
+font-weight: 600;
+margin-bottom: 0.8rem;
+line-height: 1.4;
+}
 
-    .blog__card-desc {
-      font-size: 1.4rem;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.6;
-      margin-bottom: 1.2rem;
-    }
+.blog__card-desc {
+font-size: 1.4rem;
+color: rgba(255,255,255,0.6);
+line-height: 1.6;
+margin-bottom: 1.2rem;
+}
 
-    .blog__card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.2rem;
-      color: rgba(255,255,255,0.4);
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 1rem;
-    }
+.blog__card-meta {
+display: flex;
+justify-content: space-between;
+align-items: center;
+font-size: 1.2rem;
+color: rgba(255,255,255,0.4);
+border-top: 1px solid rgba(255,255,255,0.1);
+padding-top: 1rem;
+}
 
-    .blog__card-date {
-      font-size: 1.2rem;
-    }
+.blog__card-date {
+font-size: 1.2rem;
+}
 
-    .blog__card-read {
-      color: var(--pink);
-      text-decoration: none;
-      font-size: 1.3rem;
-      transition: opacity 0.2s;
-    }
+.blog__card-read {
+color: var(--pink);
+text-decoration: none;
+font-size: 1.3rem;
+transition: opacity 0.2s;
+}
 
-    .blog__card-read:hover {
-      opacity: 0.8;
-    }
+.blog__card-read:hover {
+opacity: 0.8;
+}
 
-    .blog__empty {
-      text-align: center;
-      color: rgba(255,255,255,0.4);
-      padding: 4rem 0;
-      font-size: 1.6rem;
-    }
+.blog__empty {
+text-align: center;
+color: rgba(255,255,255,0.4);
+padding: 4rem 0;
+font-size: 1.6rem;
+}
 
-    Blocking tạm thời
-    /* ===== Card đang cập nhật - hiện biểu tượng cấm khi hover ===== */
-    .blog__card--disabled {
-      position: relative;
-    }
-    
-    .blog__card--disabled::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      border: 4px solid rgba(255, 255, 255, 0.8);
-      border-radius: 50%;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    /* Gạch chéo góc 60 độ */
-      background: linear-gradient(
-        60deg,
-        transparent 43%,
-        rgba(255, 255, 255, 0.8) 43%,
-        rgba(255, 255, 255, 0.8) 57%,
-        transparent 57%
-        );
-        pointer-events: none;
-        z-index: 10;
-      }
-    
+Blocking tạm thời
+/* ===== Card đang cập nhật - hiện biểu tượng cấm khi hover ===== */
+.blog__card--disabled {
+position: relative;
+}
+
+.blog__card--disabled::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 80px;
+height: 80px;
+border: 4px solid rgba(255, 255, 255, 0.8);
+border-radius: 50%;
+opacity: 0;
+transition: opacity 0.3s ease;
+/* Gạch chéo góc 60 độ */
+background: linear-gradient(
+  60deg,
+  transparent 43%,
+  rgba(255, 255, 255, 0.8) 43%,
+  rgba(255, 255, 255, 0.8) 57%,
+  transparent 57%
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Thay 'cum-nut-mxh' bằng tên class thực tế của hộp chứa các icon MXH của bạn */
+.footer { 
+  position: fixed !important;
+  bottom: 1px !important;    /* Ghim cách đáy màn hình 1px, bằng độ cao nút nhạc */
+  left: 50% !important;       /* Đưa cụm nút ra giữa màn hình */
+  transform: translateX(-50%) !important; /* Căn chỉnh tâm chuẩn xác ở giữa */
+  z-index: 99999 !important;  /* Luôn nổi lên trên hình nền bản đồ */
+}
+
+.blog-header-banner {
+  position: -webkit-sticky; /* Hỗ trợ trình duyệt Safari cũ */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 3px
+}
+
+.blog-header-banner {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 200px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+
+}
+
+.blog-header-banner {
+  position: -webkit-sticky; /* Hỗ trợ trình duyệt Safari cũ */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 3px
+}
+
+.blog-header-banner {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 200px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+
+}
+
+.header {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 500px; 
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+}
+
 
     
 
@@ -164,21 +233,30 @@
         <ul class="nav__items">
           <div class="logo-box-container">
             <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
-              <img src="../images/logo.png" alt="Logo" class="site-logo">
+              <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
             </a>
           </div>
-          <li class="nav__item">
-            <a href="../about/about_index.html" class="nav__link">About</a>
+          <li class="nav__item" data-i18n="myblog_index_1">
+            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
           </li>
-          <li class="nav__item">
-            <a href="../skills/skills_index.html" class="nav__link">Skills</a>
+          <li class="nav__item" data-i18n="myblog_index_2">
+            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
           </li>
-          <li class="nav__item">
-            <a href="../contact/contact_index.html" class="nav__link">Contact</a>
+          <li class="nav__item" data-i18n="myblog_index_3">
+            <a href="../CV/cv2_index.html" class="nav__link" data-i18n="cv">Xem CV</a>
           </li>
-          <li class="nav__item">
-            <a href="../myblog/myblog_index.html" class="nav__link">My Blog</a>
+          <li class="nav__item" data-i18n="myblog_index_4">
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
           </li>
+          <li class="nav__item" data-i18n="myblog_index_5">
+            <a href="../myblog/myblog_index.html" style="color: #FF5551;" class="nav__link" data-i18n="blog">Nhật kí</a>
+          </li>
+          <li class="nav__item" data-i18n="myblog_index_100">
+            <button onclick="toggleLang()" id="lang-btn" style="background: none; border: 1px solid rgba(255,255,255,0.4); 
+            color: white; padding: 4px 12px; border-radius: 4px; 
+            cursor: pointer; font-size: 1.4rem; letter-spacing: 1px; margin-left: 20px;" data-i18n="myblog_index_101">
+            EN
+          </button>
         </ul>
       </nav>
     </div>
@@ -189,24 +267,24 @@
     <!-- ***** Blog ***** -->
     <section class="blog" id="blog">
       <div class="row">
-        <h2>My Blog</h2>
+        <h2 data-i18n="myblog_index_6">Blog</h2>
 
         <div class="blog__grid">
 
           <!-- 1. Thêm thẻ <a> bọc toàn bộ bên ngoài để tạo liên kết -->
-            <a href="../myblog/TTPAV2.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+            <a href="../myblog/TTPAV2.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;" data-i18n="myblog_index_7">
               <div class="blog_card">
                 <!-- Ảnh bài viết -->
                  <img class="blog_card-img-placeholder" src="../images/DGT.PNG" alt="Anh bai viet">
                  <div class="blog_card-body">
-                  <p class="blog_card-tag">Documents</p>
-                  <h3 class="blog_card-title">First Blog Post</h3>
+                  <p class="blog_card-tag" data-i18n="myblog_index_8">Documents</p>
+                  <h3 class="blog_card-title" data-i18n="myblog_index_9">Technical Blog Post</h3>
                   <!--<p class="blog_card-desc">Chia sẻ về hành trình học IC/VLSI Design và Cybersecurity của tôi tại Đà Nẵng.</p>-->
-                  <p class="blog_card-desc">Tài liệu Kĩ Thuật cá Nhân</p>
+                  <p class="blog_card-desc" data-i18n="myblog_index_10">Personal Technical Documents</p>
                   <div class="blog_card-meta">
                     <span class="blog_card-date">22/01/2026</span>
                     <!-- Đổi thẻ <a> thành thẻ <span> vì bên ngoài đã có thẻ <a> lớn rồi -->
-                    <span style="color: #ff3333; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;">Read more →</span>
+                    <span style="color: #ff3333; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;" data-i18n="myblog_index_11">Read more →</span>
                   </div>
                </div>
               </div>
@@ -217,48 +295,48 @@
           <!-- ===== Card mẫu 2 ===== -->
             <!--<a href="#" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">-->
             <!-- Dán đoạn style này vào thẻ a bọc ngoài của ô số 2 -->
-             <a href="#" style="background: #111111; border: 1px solid #222222; padding: 25px; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; opacity: 0.6; cursor: not-allowed;">
+             <a href="#" style="background: #111111; border: 1px solid #222222; padding: 25px; border-radius: 8px; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; opacity: 0.6; cursor: not-allowed;" data-i18n="myblog_index_12">
             <div>
               <img class="blog_card-img-placeholder" src="../images/mal.png" alt="Anh bai viet">
-                <span style="background: #555555; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;">Project</span>
-                <h3 style="color: #ffffff; margin: 15px 0 10px 0; font-size: 18px; line-height: 1.4;">Malware Analysis Lab Setup</h3>
-                <p style="color: #888888; font-size: 14px; margin: 0; line-height: 1.6;">Tài liệu hướng dẫn cách tôi xây dựng lab phân tích malware với VMware và các công cụ chuyên dụng</p>
+                <span style="background: #555555; color: #fff; font-size: 11px; font-weight: bold; padding: 3px 8px; border-radius: 3px; text-transform: uppercase;" data-i18n="myblog_index_13">Project</span>
+                <h3 style="color: #ffffff; margin: 15px 0 10px 0; font-size: 18px; line-height: 1.4;" data-i18n="myblog_index_14">Malware Analysis Lab Setup</h3>
+                <p style="color: #888888; font-size: 14px; margin: 0; line-height: 1.6;" data-i18n="myblog_index_15">Tài liệu hướng dẫn cách tôi xây dựng lab phân tích malware với VMware và các công cụ chuyên dụng</p>
             </div>
-            <span style="color: #666666; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;">Đang cập nhật</span>
+            <span style="color: #666666; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;" data-i18n="myblog_index_16">Đang cập nhật</span>
         </a>
 
           <!-- ===== Card mẫu 3 ===== -->
-          <a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+          <a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;" data-i18n="myblog_index_17">
               <div class="blog_card">
                 <!-- Ảnh bài viết -->
                  <img class="blog_card-img-placeholder" src="../images/life.png" alt="Anh bai viet">
                  <div class="blog_card-body">
-                  <p class="blog_card-tag">Story</p>
-                  <h3 class="blog_card-title">Hành trình cuộc sống và trải nghiệm cá nhân của tôi.</h3>
+                  <p class="blog_card-tag" data-i18n="myblog_index_18">Story</p>
+                  <h3 class="blog_card-title" data-i18n="myblog_index_19">My Life Journey and Personal Experiences.</h3>
                   <!--<p class="blog_card-desc">Hành trình cuộc sống và trải nghiệm cá nhân của tôi.</p>-->
-                  <p class="blog_card-desc">Life & Personal</p>
+                  <p class="blog_card-desc" data-i18n="myblog_index_20">Life & Personal</p>
                   <div class="blog_card-meta">
                     <span class="blog_card-date">02/01/2026</span>
                     <!-- Đổi thẻ <a> thành thẻ <span> vì bên ngoài đã có thẻ <a> lớn rồi -->
-                    <span style="color: #ff3333; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;">Read more →</span>
+                    <span style="color: #ff3333; font-weight: bold; font-size: 14px; margin-top: 20px; display: block; text-align: right;" data-i18n="myblog_index_21">Read more →</span>
                   </div>
                </div>
               </div>
 
-        </div>
+        </a></div><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
         <!-- Thêm card mới vào đây -->
 
-      </div>
-    </section>
+      </a></div><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+    </a></section><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
 
-  </main>
+  </a></main><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
 
   <!-- ***** Footer ***** -->
-  <footer role="contentinfo" class="footer">
-    <div class="row">
-      <ul class="footer__social-links">
-        <li class="footer__social-link-item">
-          <a href="https://x.com/NguyenToan13312/" title="Link to X Profile">
+  </a><footer role="contentinfo" class="footer"><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+    </a><div class="row"><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+      </a><ul class="footer__social-links"><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+        </a><li class="footer__social-link-item"><a href="../life/life&personal.html" class="blog_card-link" style="text-decoration: none; color: inherit; display: block;">
+          </a><a href="https://x.com/NguyenToan13312/" title="Link to X Profile">
             <img src="../images/twitter.svg" class="footer__social-image" alt="Twitter">
           </a>
         </li>
@@ -283,12 +361,12 @@
           </a>
         </li>
       </ul>
-      <p>&copy; 2026 - Template designed & developed by <a class="link" href="../index.html">Toan</a>.</p>
+      <p data-i18n="myblog_index_22">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="myblog_index_23">Toan</a>.</p>
     </div>
   </footer>
 
   <a href="#top" class="back-to-top" title="Back to Top">
-    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image"/>
+    <img src="../images/arrow-up.svg" alt="Back to Top" class="back-to-top__image">
   </a>
 
   <script src="../index.js"></script>
@@ -309,5 +387,137 @@
       }
     });
   </script>
-</body>
-</html>
+
+<div id="music-control" class="music-fixed-btn">
+    <div class="music-info">
+        <!-- Thay thế icon nốt nhạc cũ bằng khối sóng âm này -->
+        <div id="music-wave" class="music-wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+        <span id="music-text" data-i18n="myblog_index_24">Âm nhạc: Đang phát</span>
+    </div>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+    <span id="volume-percent" class="volume-percent">30%</span>
+</div>
+
+
+
+
+<!-- Nhạc riêng cho trang chủ -->
+<audio id="bg-music" src="../music/Fiction Sad Beat - Piano Beat Instrumental - Diby Production (mp3cut.net).mp3" loop=""></audio>
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+
+</script>
+
+<script src="../jslang.js"></script>
+
+
+
+</body></html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/png" href="../images/logo.gif.png">
+  <title>cv | Nguyen Toan</title>
+  <meta name="description" content="cv Nguyen Toan - IC/VLSI Design Student & Cybersecurity Enthusiast">
+  <link rel="stylesheet" href="../index.css">
+  <script src="../particles.min.js"></script>
+</head>
+
+
+<style>
+
+.cv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(70vh - 50px); /* trừ chiều cao header */
+  text-align: center;
+}
+
+.cv .row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cv__info {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.footer {
+  position: fixed !important;
+  bottom: 1px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  z-index: 99999 !important;
+  background-size: cover;
+  background-attachment: fixed; /* hoặc min-height: 100%, không phải 100vh */
+}
+
+.header {
+
+  /* Tạo độ trong suốt nhẹ để lọt ánh sáng hồng và sương mù phía sau */
+  background-color: rgba(81, 81, 81, 0); 
+  
+  /* Lớp lọc này sẽ làm mờ chữ và nội dung khi chúng cuộn qua menu */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Hỗ trợ trình duyệt Safari */
+}
+
+.content-wrapper {
+  height: calc(100vh - 200px); /* 120px là khoảng cách từ đỉnh màn hình đến ranh giới ẩn chữ */
+  margin-top: 120px; /* Đẩy vùng nội dung xuống dưới menu */
+  overflow-y: auto; /* Tạo thanh cuộn riêng cho phần nội dung */
+
+}
+
+.header {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  height: 500px; 
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+}
+
+</style>
+
+<body class="subpage">
+  <div id="particles-js"></div>
+
+  <!-- ***** Header ***** -->
+  <header class="header" role="banner" id="top">
+    <div class="row">
+      <nav class="nav" role="navigation">
+        <ul class="nav__items">
+          <div class="logo-box-container">
+            <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
+              <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
+            </a>
+          </div>
+          <li class="nav__item" data-i18n="about_index_1">
+            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_2">
+            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_3">
+            <a href="../CV/cv2_index.html" style="color: #FF5551;" class="nav__link" data-i18n="cv">Xem CV</a>
+          </li>
+          <li class="nav__item" data-i18n="about_index_4">
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
+          </li>
+          <li class="nav--item" data-i18n="about_index_5">
+            <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Nhật kí</a>
+          </li>
+          <li class="nav__item" data-i18n="skills_index_6">
+            <button onclick="toggleLang()" id="lang-btn" style="background: none; border: 1px solid rgba(255,255,255,0.4); 
+            color: white; padding: 4px 12px; border-radius: 4px; 
+            cursor: pointer; font-size: 1.4rem; letter-spacing: 1px; margin-left: 20px;" data-i18n="cv_index_7">
+            EN
+</button>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main">
+
+    <!-- ***** cv ***** -->
+    <section class="cv" id="cv">
+      <div class="row">
+        <h2>Ngôn Ngữ CV - CV Language</h2>
+        <div class="cv__info">
+          <a href="./cv_index.html" class="btn" data-i18n="cv2_index_37">CV bản tiếng Việt (Vietnamese)</a>
+          <a href="./cv_en_index.html" class="btn" data-i18n="cv2_index_38">CV bản tiếng Anh (English)</a>
+        </div>
+      </div>
+    </section>
+    
+
+  </main>
+
+  <!-- ***** Footer ***** -->
+  <!-- ***** Footer ***** -->
+  <div role="contentinfo" class="footer">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://x.com/NguyenToan13312/" title="Link to X Profile">
+            <img src="../images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/toannguyen1521" title="Link to Github Profile">
+            <img src="../images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.facebook.com/nguyen.toann.200662009" title="Link to Facebook Profile">
+            <img src="../images/Facebook.svg.webp" class="footer__social-image" alt="Facebook">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.tiktok.com/@toan111" title="Link to TikTok Profile">
+            <img src="../images/TikTok.png" class="footer__social-image" alt="TikTok">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://t.me/Toan13312" title="Link to Telegram Profile">
+            <img src="../images/telegram.png" class="footer__social-image" alt="Telegram">
+          </a>
+        </li>
+      </ul>
+      <p data-i18n="cv_index_10">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="cv_index_11">Toan</a>.</p>
+    </div>
+  </div>
+
+  <script src="../index.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+        "size": { "value": 3, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.1, "sync": false } },
+        "line_linked": { "enable": false },
+        "move": { "enable": true, "speed": 0.6, "direction": "right", "random": true, "straight": false, "out_mode": "out" }
+      },
+      "interactivity": {
+        "events": { "onhover": { "enable": true, "mode": "bubble" } },
+        "modes": { "bubble": { "distance": 80, "size": 6, "duration": 2, "opacity": 0.8, "speed": 3 } }
+      }
+    });
+  </script>
+
+  <div id="music-control" class="music-fixed-btn">
+    <div class="music-info">
+        <!-- Thay thế icon nốt nhạc cũ bằng khối sóng âm này -->
+        <div id="music-wave" class="music-wave">
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+            <span class="stroke"></span>
+        </div>
+        <span id="music-text" data-i18n="cv_index_11">Âm nhạc: Đang phát</span>
+    </div>
+    <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+    <span id="volume-percent" class="volume-percent">30%</span>
+</div>
+
+
+
+
+<!-- Nhạc riêng cho trang chủ -->
+<audio id="bg-music" src="../music/Fiction Sad Beat - Piano Beat Instrumental - Diby Production (mp3cut.net).mp3" loop=""></audio>
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+
+</script>
+
+<script src="../jslang.js"></script>
+
+
+
+
+
+</body><!-- trong about/index.html, skills/index.html, clients/index.html, cv/index.html --></html>

@@ -1,0 +1,636 @@
+<!DOCTYPE html><html lang="vi"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life & Personal</title>
+    <style>
+/* Khởi tạo giao diện tối đồng bộ với trang chủ */
+body {
+    background-color: #0b0b0b;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8;
+}
+
+/* Thanh Menu (Header) */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #111111;
+    border-bottom: 1px solid #222222;
+    height: 30px; 
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3333; /* Màu đỏ giống logo chữ T của bạn */
+    text-decoration: none;
+}
+
+.logo-link {
+  display: inline-block; /* Biến thẻ a thành khối để nhận transition */
+  transition: transform 0.8s ease;
+}
+
+.logo-link:hover {
+  transform: scale(1.15);
+}
+
+nav a {
+    color: #cccccc;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #ff3333;
+}
+
+/* Vùng chứa nội dung bài viết chính */
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Nút quay lại trang chủ */
+.back-btn {
+    display: inline-block;
+    color: #888888;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+.back-btn:hover {
+    color: #ff3333;
+}
+
+/* Tiêu đề bài viết */
+h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Ngày tháng + Chuyên mục */
+.meta-info {
+    font-size: 14px;
+    color: #888888;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #222222;
+    padding-bottom: 15px;
+}
+.meta-info .tag {
+    color: #ff3333;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+/* -----------------------------------------------------
+    PHẦN NỘI DUNG CHÍNH (Định dạng cho văn bản từ Word paste vào)
+----------------------------------------------------- */
+.article-content {
+    font-size: 17px;
+    color: #dddddd;
+}
+
+/* Các tiêu đề lớn nhỏ trong bài viết */
+.article-content h2 {
+    color: #ffffff;
+    font-size: 24px;
+    margin-top: 35px;
+    border-left: 4px solid #ff3333;
+    padding-left: 10px;
+}
+
+.article-content h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-top: 25px;
+}
+
+/* Đoạn văn */
+.article-content p {
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Hình ảnh minh họa trong bài viết */
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    border-radius: 6px;
+    border: 1px solid #333333;
+}
+
+/* Chú thích ảnh */
+.img-caption {
+    text-align: center;
+    font-style: italic;
+    color: #888888;
+    font-size: 14px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+/* Khối code/công thức đặc biệt (nếu có) */
+.article-content pre, .article-content code {
+    background-color: #161616;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #ff8888;
+    font-family: Consolas, Monaco, monospace;
+}
+
+/* Footer dưới cùng */
+footer {
+    text-align: center;
+    padding: 40px 0;
+    color: #666666;
+    font-size: 14px;
+    border-top: 1px solid #222222;
+    margin-top: 60px;
+}
+
+        /* Đoạn mã CSS đặc chế riêng cho nút nhạc trên thanh Menu */
+.music-fixed-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 99999;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s ease;
+}
+.music-fixed-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+    transform: translateY(-2px);
+}
+
+
+/* Khung bọc nút nhạc cố định ở góc dưới bên trái */
+.music-fixed-btn {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    z-index: 99999;
+    cursor: pointer;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.6);
+    padding: 8px 14px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: flex;
+    align-items: center;
+    gap: 0px; /* Ban đầu không có khoảng cách để giấu thanh volume */
+    overflow: hidden;
+    max-width: 200px; /* Giới hạn chiều rộng ban đầu */
+    transition: all 1.5s cubic-bezier(0.25, 1, 0.1, 10);
+}
+
+/* Phần chứa icon và chữ */
+.music-info {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+}
+
+/* Thanh kéo âm lượng ban đầu bị giấu đi */
+.volume-slider {
+    width: 0px;
+    opacity: 0;
+    pointer-events: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    accent-color: #ff6b00; /* Đổi màu nút kéo thành màu cam tiệp với logo chữ T của bạn */
+}
+
+/* Khi di chuột vào nút, mở rộng tối đa ra để không bị che thanh kéo */
+.music-fixed-btn:hover {
+    background: rgba(73, 4, 163, 0.85);
+    transform: translateY(-2px);
+    max-width: 320px; /* Tăng kích thước rộng ra */
+    gap: 10px;        /* Tạo khoảng cách thông thoáng giữa các thành phần */
+}
+
+/* Thanh kéo khi hover phải hiển thị độ rộng rõ ràng */
+.music-fixed-btn:hover .volume-slider {
+    width: 80px;      /* Cho thanh kéo dài 80px */
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Số phần trăm khi hover */
+.music-fixed-btn:hover .volume-percent {
+    width: auto;
+    opacity: 1;
+}
+
+
+
+
+/* Khung chứa các cột sóng âm */
+.music-wave {
+    width: 20px;
+    height: 16px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+/* Định dạng chung cho từng cột (thanh stroke) */
+.music-wave .stroke {
+    display: block;
+    width: 3px;
+    background: #ff6b00; /* Màu cam tiệp màu logo chữ T và thanh kéo */
+    border-radius: 2px;
+    height: 4px; /* Mặc định khi đứng im sẽ lùn xuống */
+    transition: all 0.3s ease;
+}
+
+/* Tạo hoạt ảnh dao động nhảy lên xuống với các mốc thời gian lệch nhau */
+@keyframes wave-dance {
+    0% { height: 4px; }
+    50% { height: 16px; }
+    100% { height: 4px; }
+}
+
+/* Khi nhạc phát, ta sẽ thêm class .playing bằng JS để kích hoạt hiệu ứng nhảy */
+.music-wave.playing .stroke:nth-child(1) { animation: wave-dance 1.2s infinite ease-in-out; }
+.music-wave.playing .stroke:nth-child(2) { animation: wave-dance 0.8s infinite ease-in-out; animation-delay: 0.2s; }
+.music-wave.playing .stroke:nth-child(3) { animation: wave-dance 1.0s infinite ease-in-out; animation-delay: 0.4s; }
+.music-wave.playing .stroke:nth-child(4) { animation: wave-dance 0.7s infinite ease-in-out; animation-delay: 0.1s; }
+
+
+
+.music-fixed-btn {
+    border-color: #ff00fb; /* Ép hiển thị viền màu đỏ */
+    box-shadow: 5px 10px 15px rgb(149, 0, 255); /* Thêm bóng sáng đỏ nhạt */
+    transition: all 1.5s ease;
+}
+
+
+.music-fixed-btn {
+    border-top: #e30bff58;
+    box-sizing: var(--font-size-medium);
+    transition: cubic-bezier(0.86, 1, 10, 5);
+    transition: all 1.5s ease;
+    gap: 10px; 
+}
+
+/* SỬA LẠI DÒNG 157 - 160: Gọi trực tiếp vào thẻ liên kết của header bài viết */
+.blog-header-banner a {
+    font-size: 16px !important;       /* Tăng kích thước chữ to rõ ràng bằng trang chủ */
+    font-weight: 500 !important;      /* Tăng độ đậm nét của chữ */
+    letter-spacing: 0.5px !important; /* Độ giãn chữ tinh tế */
+    
+    /* Khoảng cách lề hai bên (Để tầm 20px đến 25px là vừa đẹp, đừng để 160px kẻo chữ bị nhảy xuống hàng) */
+    margin-left: 20px !important;     
+    margin-right: 20px !important;
+    
+    display: inline-block !important;
+    transition: all 0.9s ease;
+}
+
+.blog-header-banner {
+  position: -webkit-sticky; /* Hỗ trợ trình duyệt Safari cũ */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: 5px
+}
+
+.blog-header-banner {
+
+  /* Giữ lại hiệu ứng kính mờ cho menu */
+  background-color: rgba(11, 11, 11, 0.4); 
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  /* LỚP MẶT NẠ SƯƠNG MÙ: Tạo hiệu ứng mờ dần mềm mại từ dưới lên trên */
+  mask-image: linear-gradient(to top, transparent 0%, black 60%);
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, black 60%);
+}
+
+body {
+    background-image: url("../images/backgrounds post/bri.png"); /* Đường dẫn đến file ảnh của bạn */
+    background-size: cover;                   /* Ảnh tự động phóng to tràn màn hình */
+    background-position: center;               /* Căn giữa ảnh nền */
+    background-repeat: no-repeat;             /* Không lặp lại ảnh */
+    background-attachment: fixed;              /* Giữ cố định ảnh khi cuộn trang */
+}
+
+* --------------------------------------- */
+/* ----- Footer ----- */
+/* --------------------------------------- */
+
+.footer {
+    text-align: center;
+    padding: var(--gutter-medium) 0 var(--gutter-normal);
+}
+
+.footer__social-links {
+    display: flex;
+    justify-content: center;
+    padding: var(--gutter-normal) 0;
+    list-style: none; 
+}
+
+.footer__social-link-item:not(:last-of-type) {
+    margin-right: var(--gutter-small);
+}
+
+.footer__social-image {
+    height: 2.2rem;
+    max-width: 320px; /* Tăng kích thước rộng ra */
+    margin-right: 15px;
+}
+
+.footer__github-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.footer__github-buttons iframe {
+    height: 2.5rem;
+    width: 84px;
+    transform: translateY(3px);
+}
+
+@media(max-width: 500px) {
+    .footer {
+        padding: var(--gutter-medium) 0;
+    } 
+}
+
+footer .link {
+    color: white; /* Màu chữ mặc định là trắng */
+    text-decoration: none; /* Bỏ gạch chân nếu có */
+    transition: color 0.3s ease; /* Tạo hiệu ứng đổi màu mượt mà */
+}
+
+footer .link:hover {
+    color: red; /* Chuyển thành màu đỏ khi di chuột qua */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+
+
+     <!-- 1. THANH MENU (Đồng bộ trang chủ) -->
+    <header class="blog-header-banner" style="background-image: linear-gradient(rgba(11, 11, 11, 0.75), rgba(11, 11, 11, 0.75)), url('../images/header.jpg'); background-size: cover; background-position: center 20%; padding: 40px 8%; border-bottom: 2px solid #ff3333;">    
+        <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
+              <!-- Gọi file logo từ tab xuống -->
+               <img src="../images/logo.gif.png" alt="Logo" class="site-logo" width="180">
+               <!-- Dòng chữ link hiện lên khi di chuột -->
+        </a>
+
+        <nav>
+            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
+            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
+            <a href="../CV/cv2_index.html" class="nav__link" data-i18n="cv">Xem CV</a>
+            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
+            <a href="../myblog/myblog_index.html" style="color: #ff0000;" class="nav__link" data-i18n="blog">Nhật kí</a>
+        </nav>
+    </header>
+
+    <!-- 2. VÙNG CHỨA NỘI DUNG BÀI VIẾT -->
+    <div class="container">
+        
+        <a href="../life/life&personal.html" class="back-btn" data-i18n="lpefc2_2">← Quay lại trang Đời Sống và Xã Hội</a>
+
+        <!-- Tiêu đề lớn của bài viết -->
+        <h1 data-i18n="lpefc2_3">Life & Personal</h1>
+        
+        <!-- Thông tin phụ -->
+        <div class="meta-info">
+            <span class="tag" data-i18n="lpefc2_4">LIFE / NEW IN THE DA NANG CITY</span>
+            <span class="date" data-i18n="lpefc2_5">Đăng ngày 07/12/2025</span>
+        </div>
+
+        <!-- NƠI BẠN COPY VĂN BẢN TỪ FILE WORD VÀO ĐÂY -->
+        <div class="article-content">
+    <p style="margin-bottom: 20px; color: #aaa;" data-i18n="lpefc2_6">Thi tốt nghiệp năm 2024 ở cấp 3 xong cũng là lúc nhiều người đi hướng khác, từ Đại Học, đi làm rồi mới đi học, đi quân sự hoặc là ở quê,... 
+        Còn mình thì thích đi xa, thích tận hưởng cuộc sống, cứ nghĩ đến được lên Đại Học và rời xa gia đình là vừa vui vừa buồn. Mình thì lại thích yên tĩnh, không ồn ào, thích biển, môi trường sang trọng và được học hỏi nhiều thứ hơn 
+        nhưng không hiểu vì sao tôi lại chọn Đà Nẵng thay vì ở các thành phố lớn như Hà Nội hoặc là Hô Chí Minh </p>
+    <p data-i18n="lpefc2_7">Bắt đầu hành trình, ba mẹ nhắc kĩ là "Xã Hội phức tạp lắm, chen nhau sống và lừa nhau rất nhiều. Khi tới thành phố, tuyệt đối không nghe lời người lạ nói, luôn lắng nghe bản thân mình, suy nghĩ kĩ trước khi hành động". 
+        Tôi nghe kĩ và khi tới thành phố được một thời gian, đúng là Xã Hội đầy rẫy lừa đảo và chen nhau sống, may mắn là tôi lên tới nơi là được ở nhờ phòng trọ của anh là bạn của chị gái mình, từ đây tôi bắt đầu quá trình tiếp xúc với Xã Hội
+        được chở đi ăn, dược mấy anh dặn dò kinh nghiệm sinh tồn trong Xã Hội, tự mình đi nhập học vào trường Đại Học đã chọn. Tối về là mệt chỉ muốn ngủ</p>
+    <p data-i18n="lpefc2_8">Sau khi làm thủ tục nhập học thì 10 ngày sau tôi phải ra ở riêng và cũng suy nghĩ là không thể ở với mấy anh mãi được. Cơ bản là mới lên thành phố còn chưa quen với nhịp sống bên ngoài, 
+        chưa kiếm ra tiền và kiếm trọ nhưng không ưng rồi cộng thêm chưa có kinh nghiệm kiếm trọ và cuối cùng tôi quyết định chọn Kí Túc Xá để làm nơi lưu trú và học tập</p>
+    <p data-i18n="lpefc2_9">Cuộc sống mới bát đầu từ đây, tự mình lo mọi thứ, tất cả việc đều đến tay mình và nếu mình không giải quyểt thì nó vẫn sẽ ở đó, không còn ba mẹ làm giúp chúng ta như trước nữa. Nhớ nhà lắm, cứ tuần gọi về cho ba mẹ 2 3 lần, ba mẹ lo lắng vì sợ chuyện không hay xảy ra với con nhưng trải nghiệm khó khăn ở cấp 3 đã khiến tôi thay đổi cách suy nghĩ,
+        nhưng tôi tự tin là sẽ cẩn thận và vượt qua mọi khó khăn.
+    </p>
+</div>
+
+<!-- DÁN KHỐI CODE NÚT NHẠC VÀO NGAY ĐÂY (NẰM DƯỚI THẺ </a> CỦA LOGO) -->
+         <!-- Đổi từ class="music-menu-btn" thành class="music-fixed-btn" -->
+          <div id="music-control" class="music-fixed-btn" style="margin-left: 10px; margin-right: auto;">
+
+            <audio id="bg-music" src="../music/Booming Silence.mp3" loop=""></audio>
+
+            <div class="music-info">
+                <div id="music-wave" class="music-wave">
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                    <span class="stroke"></span>
+                </div>
+                <span id="music-text" data-i18n="lpefc2_1">Âm nhạc: Đang phát</span>
+            </div>
+            <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
+            <span id="volume-percent" class="volume-percent">30%</span>
+        </div>
+
+    <!-- ***** Footer ***** -->
+  <footer role="contentinfo" class="footer">
+    <div class="row">
+      <ul class="footer__social-links">
+        <li class="footer__social-link-item">
+          <a href="https://x.com/NguyenToan13312/" title="Link to X Profile">
+            <img src="../images/twitter.svg" class="footer__social-image" alt="Twitter">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://github.com/toannguyen1521" title="Link to Github Profile">
+            <img src="../images/github.svg" class="footer__social-image" alt="Github">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.facebook.com/nguyen.toann.200662009" title="Link to Facebook Profile">
+            <img src="../images/Facebook.svg.webp" class="footer__social-image" alt="Facebook">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://www.tiktok.com/@toan111" title="Link to TikTok Profile">
+            <img src="../images/TikTok.png" class="footer__social-image" alt="TikTok">
+          </a>
+        </li>
+        <li class="footer__social-link-item">
+          <a href="https://t.me/Toan13312" title="Link to Telegram Profile">
+            <img src="../images/telegram.png" class="footer__social-image" alt="Telegram">
+          </a>
+        </li>
+      </ul>
+      <p data-i18n="skills_index_39">© 2026 - Template designed & developed by <a class="link" href="../index.html" data-i18n="skills_index_40">Toan</a>.</p>
+    </div>
+  </footer>
+
+    <script>
+function toggleFullscreen() {
+    var iframe = document.getElementById("pdf-view");
+    
+    if (!document.fullscreenElement) {
+        // Lệnh phóng to toàn màn hình cho khung văn bản
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.webkitRequestFullscreen) { /* Dành cho trình duyệt Safari */
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) { /* Dành cho trình duyệt IE */
+            iframe.msRequestFullscreen();
+        }
+    } else {
+        // Thoát khỏi chế độ toàn màn hình
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+</script>
+
+
+<script>
+const musicWave = document.getElementById('music-wave');
+const volumePercent = document.getElementById('volume-percent');
+const audio = document.getElementById('bg-music');
+const musicBtn = document.getElementById('music-control');
+const musicIcon = document.getElementById('music-icon');
+const musicText = document.getElementById('music-text');
+const volumeSlider = document.getElementById('volume-slider');
+
+// 1. ĐỒNG BỘ TRẠNG THÁI VÀ MỨC ÂM LƯỢNG KHI VỪA TẢI TRANG
+window.addEventListener('DOMContentLoaded', () => {
+    const musicTime = localStorage.getItem('music_time');
+    if (musicTime) audio.currentTime = parseFloat(musicTime);
+
+    const savedVolume = localStorage.getItem('music_volume');
+    if (savedVolume !== null) {
+        audio.volume = parseFloat(savedVolume);
+        volumeSlider.value = savedVolume;
+        volumePercent.innerText = Math.round(parseFloat(savedVolume) * 100) + "%";
+    } else {
+        audio.volume = 0.3;
+        volumePercent.innerText = "30%";
+    }
+
+    // KIỂM TRA TRẠNG THÁI BẬT/TẮT TỪ TRANG TRƯỚC
+    const musicStatus = localStorage.getItem('music_status');
+    
+    // Nếu trang trước người dùng ĐÃ TẮT nhạc, thì trang này giữ nguyên trạng thái tắt
+    if (musicStatus === 'paused') {
+        audio.pause();
+        updateButtonUI();
+    } else {
+        // Nếu trang trước đang bật (hoặc lần đầu vào web), tiến hành phát nhạc
+        audio.play().then(() => updateButtonUI()).catch(err => {
+            const forcePlay = () => {
+                audio.play().then(() => updateButtonUI());
+                window.removeEventListener('click', forcePlay);
+                window.removeEventListener('scroll', forcePlay);
+            };
+            window.addEventListener('click', forcePlay);
+            window.addEventListener('scroll', forcePlay);
+        });
+    }
+});
+
+// 2. XỬ LÝ SỰ KIỆN KÉO THANH ÂM LƯỢNG
+volumeSlider.addEventListener('input', (e) => {
+    const vol = e.target.value;
+    audio.volume = vol;
+    localStorage.setItem('music_volume', vol);
+    volumePercent.innerText = Math.round(vol * 100) + "%";
+    
+    if (parseFloat(vol) === 0) {
+        musicIcon.innerText = "🔇";
+    } else if (!audio.paused) {
+        musicIcon.innerText = "🎵";
+    }
+});
+
+// Hàm cập nhật giao diện chữ
+function updateButtonUI() {
+    if (audio.paused) {
+        musicText.innerText = "Âm nhạc: Đang tắt";
+        musicBtn.style.opacity = "0.6";
+        musicWave.classList.remove('playing'); 
+    } else {
+        musicText.innerText = "Âm nhạc: Đang phát";
+        musicBtn.style.opacity = "1";
+        if (parseFloat(volumeSlider.value) > 0) {
+            musicWave.classList.add('playing');
+        } else {
+            musicWave.classList.remove('playing');
+        }
+    }
+}
+
+// Giữ lại mousedown để mồi quyền chuyển trang mượt mà
+document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('mousedown', () => {
+        localStorage.setItem('music_time', audio.currentTime);
+        // Lưu lại trạng thái trước khi bấm chuyển trang
+        localStorage.setItem('music_status', audio.paused ? 'paused' : 'playing');
+    });
+});
+
+audio.addEventListener('timeupdate', () => {
+    localStorage.setItem('music_time', audio.currentTime);
+});
+
+// Bật tắt nhạc khi click trực tiếp
+musicBtn.addEventListener('click', (e) => {
+    if (e.target === volumeSlider) return; 
+    e.stopPropagation();
+    if (audio.paused) {
+        audio.play().then(() => {
+            updateButtonUI();
+            localStorage.setItem('music_status', 'playing'); // Lưu trạng thái ĐANG PHÁT
+        });
+    } else {
+        audio.pause();
+        updateButtonUI();
+        localStorage.setItem('music_status', 'paused'); // Lưu trạng thái ĐÃ TẮT
+    }
+});
+</script>
+
+
+
+
+</body></html>
