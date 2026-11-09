@@ -78,6 +78,40 @@
     height: auto;
 }
 
+/* Khối tổng thể chứa các hàng chứng chỉ */
+.cert-grid-container {
+    display: flex;
+    flex-direction: column; /* Xếp hàng 1 và hàng 2 theo chiều dọc */
+    gap: 20px;              /* Khoảng cách giữa hàng trên và hàng dưới */
+    width: 100%;
+}
+
+/* Hàng thứ nhất: Đẩy 2 ảnh nằm ngang */
+.cert-row-top {
+    display: flex;
+    flex-direction: row;    /* 2 ảnh nằm ngang */
+    justify-content: space-between; /* Đẩy 2 ảnh ra 2 mép */
+    gap: 15px;              /* Khoảng cách giữa 2 ảnh trên */
+}
+
+/* Định kích thước cho 2 ảnh hàng trên để chúng vừa khít */
+.cert-row-top .work_image {
+    width: 70%;             /* Mỗi ảnh chiếm gần một nửa chiều rộng */
+    height: auto;
+}
+
+/* Hàng thứ hai: Đưa ảnh thứ 3 vào giữa */
+.cert-row-bottom {
+    display: flex;
+    justify-content: center; /* Căn giữa bức ảnh thứ 3 */
+}
+
+/* Định kích thước cho ảnh thứ 3 ở hàng dưới */
+.cert-row-bottom .work_image {
+    width: 48%;             /* Giữ nguyên kích thước bằng các ảnh trên cho cân đối */
+    height: auto;
+}
+
 
 </style>
 
@@ -127,16 +161,11 @@
           <div class="work__box">
             <div class="work__text">
               <h3 data-i18n="skills_index_9">Experience in Semiconductor</h3>
-              <p data-i18n="skills_index_10">Participate in microchip projects organized by the School and UNITEC JAPAN CO., LTD.</p>
               <p data-i18n="skills_index_11">Self-studied STM32 microcontroller programming and embedded systems</p>
-              <p data-i18n="skills_index_12">Samsung Innovation Campus</p>
               <p data-i18n="skills_index_13">Testing and troubleshooting electronic circuit boards in Altium Designer software</p>
               <p data-i18n="skills_index_14">Simulating chips</p>
               <p data-i18n="skills_index_15">Designed PCB layouts (LED/resistor circuits) using Altium Designer software.</p>
-              <ul class="work__list">
-                <li data-i18n="skills_index_16">Python</li>
-                <li data-i18n="skills_index_17">Verilog</li>
-              </ul>
+              <p data-i18n="skills_index_16">Programming Languages: Python, HTML, CSS, Javascript</p>
             </div>
             <!-- Bọc cả cụm ảnh và video vào chung một nhóm để quản lý layout ngang -->
           <div class="media-container">
@@ -164,13 +193,7 @@
               <p data-i18n="skills_index_22">Analyzed real-world ransomware samples (GandCrab, LockBit Black, Expiro) in isolated lab environments.</p>
               <p data-i18n="skills_index_23">Studied network traffic analysis using Wireshark.</p>
               <p data-i18n="skills_index_24">Built and maintained a dedicated malware analysis lab using VMware Workstation.</p>
-              <ul class="work__list">
-                <li data-i18n="skills_index_25">Ghidra</li>
-                <li data-i18n="skills_index_26">x32dbg</li>
-                <li data-i18n="skills_index_27">Wireshark</li>
-                <li data-i18n="skills_index_28">VMware</li>
-                <li data-i18n="skills_index_29">Kali Linux</li>
-              </ul>
+              <p data-i18n="skills_index_241">Analysis tools: VMWare, Ghidra, x32dbg and x64dbg, Wireshark, Kali Linux </p>
             </div>
             <div class="work__image-box">
               <img src="../images/project-2.png" class="work__image" alt="Cybersecurity Lab">
@@ -183,11 +206,7 @@
               <p data-i18n="skills_index_32">Clearly allocate time across academic, project, and personal development tasks.</p>
               <p data-i18n="skills_index_33">Prioritize deadlines effectively using structured task management systems.</p>
               <p data-i18n="skills_index_34">Consistently deliver assignments on time while maintaining quality standards.</p>
-              <ul class="work__list">
-                <li data-i18n="skills_index_35">Google Calendar</li>
-                <li data-i18n="skills_index_36">Todoist</li>
-                <li data-i18n="skills_index_37">Microsoft To Do</li>
-              </ul>
+              <p data-i18n="skills_index_35">Software tools for time management: Google Calendar, Todoist and Microsoft To Do</p>
             </div>
             <div class="work__image-box">
               <img src="../images/project-3.png" class="work__image" alt="Project 3">
@@ -198,23 +217,28 @@
             <div class="work__text">
               <h3 data-i18n="skills_index_38">Certifications</h3>
               <ul class="work__list">
-                <li data-i18n="skills_index_40">Certificate's Simplilearn C++</li>
-                <li data-i18n="skills_index_41">Issued on date: 09/07/2026 (MM/DD/YYYY)</li>
-                <li data-i18n="skills_index_42">View  Certificate: <a href="https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf" title="Link Certificate">https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf</a>
+                <p data-i18n="skills_index_40">Certificate's Simplilearn C++</p>
+                <p data-i18n="skills_index_41">Issued on date: 09/07/2026 (MM/DD/YYYY)</p>
+                <p data-i18n="skills_index_42">View  Certificate: <a href="https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf" title="Link Certificate">https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf</a></p>
               </ul>
               <ul class="work__list">
-                <li data-i18n="skills_index_43">Certificate's Anthropic</li>
-                <li data-i18n="skills_index_44">Issued on date: 11/08/2026 (MM/DD/YYYY)</li>
-                <li data-i18n="skills_index_45">View  Certificate: <a href="https://verify.skilljar.com/c/psnygmixr237" title="Link Certificate">https://verify.skilljar.com/c/psnygmixr237</a>
+                <p data-i18n="skills_index_43">Certificate's AI Anthropic</p>
+                <p data-i18n="skills_index_44">Issued on date: 11/08/2026 (MM/DD/YYYY)</p>
+                <p data-i18n="skills_index_45">View  Certificate: <a href="https://verify.skilljar.com/c/psnygmixr237" title="Link Certificate">https://verify.skilljar.com/c/psnygmixr237</a></p>
               </ul>
             </div>
-            <div class="work__image-box">
-              <img src="../images/certifiacate.png" class="work__image" alt="Certificate">
-              <p></p>
-              <img src="../images/AnthropicCer.png" class="work__image" alt="Certificate">
+            <!-- Khối chứa toàn bộ chứng chỉ -->
+            <div class="cert-grid-container">
+                <!-- Hàng số 1: Chứa 2 ảnh nằm ngang -->
+                <div class="cert-row-top">
+                    <img src="../images/certifiacate.png" class="work_image" alt="Certificate Simplilearn">
+                    <img src="../images/AnthropicCer.png" class="work_image" alt="Certificate Anthropic">
+                </div>
+                <!-- Hàng số 2: Chứa 1 ảnh nằm dưới và căn giữa -->
+                <div class="cert-row-bottom">
+                    <img src="../images/link-anh-thu-ba.png" class="work_image" alt="Certificate Windows">
+                </div>
             </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -287,7 +311,7 @@
             <span class="stroke"></span>
             <span class="stroke"></span>
         </div>
-        <span id="music-text" data-i18n="skills_index_41">Âm nhạc: Đang phát</span>
+        <span id="music-text" data-i18n="skills_index_411">Âm nhạc: Đang phát</span>
     </div>
     <input type="range" id="volume-slider" min="0" max="1" step="0.05" value="0.3" class="volume-slider">
     <span id="volume-percent" class="volume-percent">30%</span>

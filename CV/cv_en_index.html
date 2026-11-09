@@ -8,7 +8,6 @@
     <script src="../particles.min.js"></script>
 
     <style>
-        /* Toàn dán đoạn mã CSS đặc chế nút nhạc của trang LPEFC2 vào đây */
         /* Ép thanh header dàn hàng ngang và căn giữa các thành phần theo chiều dọc */
 .blog-header-banner {
     display: flex !important;
@@ -254,7 +253,7 @@ body:has(#CV) {
     padding-left: 30px !important;  /* Tạo khoảng trống bên trái để chừa chỗ cho thanh dọc và chấm tròn */
 }
 
-/* 2. TỰ ĐỘNG VẼ THANH DỌC MÀU XANH NGỌC */
+/* 2. TỰ ĐỘNG VẼ THANH DỌC MÀU ĐỎ */
 .cv-item::before {
     content: "";
     position: absolute;
@@ -262,7 +261,7 @@ body:has(#CV) {
     left: -30px;      /* Vị trí căn lề trái */
     width: 2px;     /* Độ dày của thanh dọc */
     height: 90%;   /* Thanh dọc kéo dài xuống hết chiều cao của cả khối */
-    background: #d51111 !important; /* Mã màu xanh ngọc (Cyan/Teal) giống ảnh mẫu của bạn */
+    background: #d51111 !important; /* Mã màu đỏ giống ảnh mẫu của bạn */
     opacity: 0.8;
 }
 
@@ -280,11 +279,10 @@ body:has(#CV) {
     width: 10px;     /* Kích thước chấm tròn */
     height: 8px;
     background: #0d1117; /* Màu nền tối trùng với màu nền web để tạo hiệu ứng rỗng ruột */
-    border: 5px solid #ff0000 !important; /* Viền màu xanh ngọc */
+    border: 5px solid #ff0000 !important; /* Viền màu đỏ */
     border-radius: 50%; /* Biến hộp vuông thành hình tròn */
     z-index: 2;     /* Đảm bảo chấm tròn nổi lên trên thanh dọc */
 }
-
 
 .back-btn {
     display: inline-block;
@@ -332,7 +330,7 @@ body:has(#CV) {
 
 }
 </style>
-    </style>
+
 </head>
 
 <body class="subpage">
@@ -348,22 +346,22 @@ body:has(#CV) {
             <a href="https://toannguyen1521.github.io/portfolio-website/" class="logo-link">
               <img src="../images/logo.gif.png" alt="Logo" class="site-logo">
             </a>
-          </div>
-          <li class="nav__item" data-i18n="about_index_1">
-            <a href="../about/about_index.html" class="nav__link" data-i18n="about">Giới Thiệu</a>
-          </li>
-          <li class="nav__item" data-i18n="about_index_2">
-            <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Kĩ Năng</a>
-          </li>
-          <li class="nav__item" data-i18n="about_index_3">
-            <a href="../CV/cv2_index.html" style="color: #FF5551;" class="nav__link" data-i18n="cv">Xem CV</a>
-          </li>
-          <li class="nav__item" data-i18n="about_index_4">
-            <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Liên Hệ</a>
-          </li>
-          <li class="nav--item" data-i18n="about_index_5">
-            <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Nhật kí</a>
-          </li>
+          </div> 
+        <li class="nav__item" data-i18n="about_index_1"> 
+        <a href="../about/about_index.html" class="nav__link" data-i18n="about">About</a> 
+        </li> 
+        <li class="nav__item" data-i18n="about_index_2"> 
+        <a href="../skills/skills_index.html" class="nav__link" data-i18n="skills">Skills</a> 
+        </li> 
+        <li class="nav__item" data-i18n="about_index_3"> 
+        <a href="../CV/cv2_index.html" style="color: #FF5551;" class="nav__link" data-i18n="cv">My CV</a> 
+        </li> 
+        <li class="nav__item" data-i18n="about_index_4"> 
+        <a href="../contact/contact_index.html" class="nav__link" data-i18n="contact">Contact</a> 
+        </li> 
+        <li class="nav--item" data-i18n="about_index_5"> 
+        <a href="../myblog/myblog_index.html" class="nav__link" data-i18n="blog">Blog</a> 
+        </li>
           <li class="nav__item" data-i18n="skills_index_6">
         </ul>
       </nav>
@@ -372,7 +370,7 @@ body:has(#CV) {
 
     <!-- 2. KHU VỰC NỘI DUNG CV CHÍNH (CĂN GIỮA MÀN HÌNH) -->
     <main class="cv-container">
-        <h1 class="cv-title" data-i18n="cv_index_6"> -My CV- </h1>
+        <h1 class="cv-title" data-i18n="cv_index_6"> -CV CỦA TÔI- </h1>
         
         <!-- Khung lớn chia đôi bố cục theo bản vẽ -->
         <div class="cv-content-box">
@@ -382,73 +380,70 @@ body:has(#CV) {
                 <h2 data-i18n="cv_index_7">Work Experience</h2>
                 <ol>
                     <div class="cv-item">
-                    <!--<li>PCB LAYOUT DESIGN - THIẾT KẾ MẠCH PCB BẰNG PHẦN MỀM ALTIUM DESIGNER</li>-->
-                        <li style="color: #ff3333;" data-i18n="cv_index_8">PCB LAYOUT DESIGN - PCB CIRCUIT DESIGN USING ALTIUM DESIGNER SOFTWARE</li>
-                        <a style="color: #ff3333;">🗓️ 22/10/2025 - 27/12/2025</a>
-                        <p data-i18n="cv_index_9"> - We created a single-sided PCB in 23 days using Altium Designer software while working on a group project for the PCB Layout Design course</p>
-                        <p data-i18n="cv_index_10"> - Observe, test, and fix errors in the Schematic library and Layout drawing to avoid faulty circuit traces before production.</p>
-                        <p data-i18n="cv_index_11"> - Assisting the team in the process of searching for schematic libraries to shorten implementation time. This resulted in a 20% faster implementation time.</p>
-                        <p data-i18n="cv_index_12"> - Research and development for simpler PCB layouts with more compact component placement.</p>
-                        <p data-i18n="cv_index_13"> - Answer questions and provide customer support to resolve issues that arise during the use of PCBs and Altium Designer software.</p>
-                        <p data-i18n="cv_index_14"> - Document customer feedback to optimize circuits and convert them into production requirements.</p>
-                        <p data-i18n="cv_index_14.1"> - Number of people: 3 / 1 group	|</p>
-                        <p data-i18n="cv_index_14.2"> - Role: Person in charge of checking product errors</p>
+                    <!--<li>PCB LAYOUT DESIGN - PCB DESIGN USING ALTIUM DESIGNER SOFTWARE</li>-->
+                    <li style="color: #ff3333;" data-i18n="cv_index_8">PCB LAYOUT DESIGN - PCB DESIGN USING ALTIUM DESIGNER SOFTWARE</li>
+                        <a style="color: #ff3333;">🗓️ 12/10/2025 - 27/12/2025</a>
+                        <p data-i18n="cv_index_10"> - Review and correct PCB layout designs to prevent errors such as overlapping traces or missing connections before finalization.</p>
+                        <p data-i18n="cv_index_12"> - Research and develop more efficient component placement layouts for simple PCB designs.</p>
+                        <p data-i18n="cv_index_14"> - Incorporate client feedback to optimize circuits and translate it into production requirements to improve the final product.</p>
+                        <p data-i18n="cv_index_14.1"> - Team size: 3 members |</p>
+                        <p data-i18n="cv_index_14.2"> - Role: Product error inspector</p>
                     </div>
-                    
-
-                    <div class="cv-item">   
-                        <li style="color: #ff3333;" data-i18n="cv_index_15">QUARTUS II - CHIP SIMULATION SOFTWARE</li>
-                        <a style="color: #ff3333;">🗓️ 02/02/2026 - 16/03/2026</a>
-                        <p data-i18n="cv_index_16"> - Simulate chips using Quartus II software with device 5CSXFC6D6F31C6</p>
-                        <p data-i18n="cv_index_17"> - Research and search for documentation about chip simulation</p>
-                        <p data-i18n="cv_index_18"> - Run programs and document all simulation steps to identify errors in the chip simulation process</p>
-                        <p data-i18n="cv_index_19"> - Receive feedback from others about the chip simulation process</p>
-                    </div>
-                    
 
                     <div class="cv-item">
-                        <li style="color: #ff3333;" data-i18n="cv_index_20">STM32F103C8T6 - STM32 MICROCONTROLLER WITH DETAILED CHIP IDENTIFICATION CODE: F103C8T6</li>
-                        <a style="color: #ff3333;">🗓️ 26/9/2025 - 02/10/2025</a>
-                        <p data-i18n="cv_index_21"> - Research, find relevant documentation, and learn from experienced microcontroller programmers.</p>
-                        <p data-i18n="cv_index_22"> - Program the STM32 F103C8T6, encountering many errors during the process but successfully resolving them and completing the programming within 2 hours and 48 minutes on 01/10/2025</p>
-                        <p data-i18n="cv_index_23"> - Develop and add code to the microcontroller to increase its compatibility with other electronic devices</p>
+                    <li style="color: #ff3333;" data-i18n="cv_index_20">STM32F103C8T6 - STM32 Microcontroller (Chip Model: F103C8T6)</li>
+                        <a style="color: #ff3333;">🗓️ 26/09/2025 - 02/10/2025</a>
+                        <p data-i18n="cv_index_21"> - Researched relevant documentation and sought guidance from experienced individuals regarding code flashing for microcontrollers.</p>
+                        <p data-i18n="cv_index_22"> - Optimized the debugging process, effectively resolving hardware conflicts and chip-locking issues on the STM32 circuit in under 3 hours.</p>
+                        <p data-i18n="cv_index_23"> - Developed and implemented code to enhance the microcontroller's compatibility with other electronic devices.</p>
+                    </div>
+                    
+                    <div class="cv-item">
+                    <li style="color: #ff3333;" data-i18n="cv_index_15">QUARTUS II - CHIP SIMULATION SOFTWARE</li>
+                        <a style="color: #ff3333;">🗓️ 02/02/2026 - 16/03/2026</a>
+                        <p data-i18n="cv_index_16"> - Simulated chips using Quartus II software with the 5CSXFC6D6F31C6 device</p>
+                        <p data-i18n="cv_index_17"> - Researched and gathered documentation on chip simulation</p>
+                        <p data-i18n="cv_index_18"> - Executed programs and documented every step of the simulation process to identify the exact location of any errors</p>
+                        <p data-i18n="cv_index_19"> - Incorporated feedback from others regarding the simulation process to implement more optimal approaches</p>
                     </div>
                 </ol>
             </div>
             
             <!-- Cột bên phải: Dự án -->
             <div class="cv-column column-right">
-                <h2 data-i18n="cv_index_26">Projects</h2>
+                <h2 data-i18n="cv_index_26">Dự án</h2>
                 <ol>
                     <div class="cv-item">
-                        <li style="color: #ff3333;" data-i18n="cv_index_27">CDIO 2026 CIRCUIT DESIGN</li>
+                        <li style="color: #ff3333;" data-i18n="cv_index_27">CDIO Circuit Design 2026</li>
                         <a style="color: #ff3333;">🗓️ 11/05/2026</a>
-                        <p data-i18n="cv_index_28"> - Participated in the CDIO 2026 circuit design project of UNITEC JAPAN Joint Stock Company, held at Duy Tan University - Hoa Khanh Nam campus_120 Hoang Minh Thao, Lien Chieu District, Da Nang CIty.</p>
-                        <p data-i18n="cv_index_29">Number of participants: 74 people</p>
-                        <p data-i18n="cv_index_30">Role: Contest Participant</p>
-                        <p data-i18n="cv_index_31">Unit of Implementation - Project Organizer: UNITEC JAPAN Joint Stock Company</p>
+                        <p data-i18n="cv_index_28">Participated in the CDIO Circuit Design 2026 competition, hosted by UNITEC JAPAN Joint Stock Company at Duy Tan University (Hoa Khanh Nam campus, 120 Hoang Minh Thao, Lien Chieu, Da Nang).</p>
+                        <p data-i18n="cv_index_29">Number of participants: 74</p>
+                        <p data-i18n="cv_index_30">Role: Contestant</p>
+                        <p data-i18n="cv_index_31">Organizer: UNITEC JAPAN Joint Stock Company</p>
                     </div>
 
                     <div class="cv-item">
-                        <li style="color: #ff3333;" data-i18n="cv_index_29">LINUX PERMISSION SYMBOL CONVERSION TOOL</li>
-                        <a style="color: #ff3333;">🗓️ 07/05/2026 - 12/05/2026</a>
-                        <p data-i18n="cv_index_35">A tool for converting data between Symbols -> Octals and Octals -> Symbols. Runs directly on the computer using the Python programming language.</p>
-                        <p data-i18n="cv_index_36">Team Size: 1</p>
-                        <p data-i18n="cv_index_37">Role: Project Owner - Developer</p>
-                    </div>
-
-                    <div class="cv-item">
-                        <li style="color: #ff3333;" data-i18n="cv_index_28">WEBSITE</li>
-                        <a style="color: #ff3333;">🗓️ 12/05/2025 - Now</a>
-                        <p data-i18n="cv_index_32">Built a website using HTML, CSS, and JavaScript</p>
+                        <li style="color: #ff3333;" data-i18n="cv_index_29">WEBSITE DEVELOPMENT</li>
+                        <a style="color: #ff3333;">🗓️ 12/05/2025 - Present</a>
+                        <p data-i18n="cv_index_32">Built a website using HTML, CSS, and scripts</p>
                         <p data-i18n="cv_index_33">https://toannguyen1521.github.io/portfolio-website/</p><a class="https://toannguyen1521.github.io/portfolio-website/"></a>
                         <p data-i18n="cv_index_34">Role: Website Developer</p>
+                    </div>
+
+                    <div class="cv-item">
+                        <li style="color: #ff3333;" data-i18n="cv_index_29">LINUX PERMISSION NOTATION CONVERTER</li>
+                        <a style="color: #ff3333;">🗓️ 09/05/2026 - 12/05/2026</a>
+                        <p data-i18n="cv_index_35">A tool for converting between symbolic notation and octal notation for file permissions. <p data-i18n="cv_index_36">A tool written in Python that leverages knowledge of Linux operating system structures, string manipulation, and base-conversion algorithms; it runs directly on the machine via the Command Prompt.</p>
+                        <p data-i18n="cv_index_37">Number of members: 1</p>
+                        <p data-i18n="cv_index_38">Role: Project Lead - Tool Developer</p>
                     </div>
                 </ol>
             </div>
         </div>
-        <a href="./cv2_index.html" class="back-btn" data-i18n="cv_cer2">← Back CV Page</a>
+        <a href="./cv2_index.html" class="back-btn" data-i18n="cv_cer2">← Back My CV</a>
     </main>
+
+    
 
     <!-- Đoạn mã <script> xử lý nhạc nền tự phát Toàn copy từ file LPEFC2 dán vào đây -->
 

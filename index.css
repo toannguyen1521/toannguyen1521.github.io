@@ -783,7 +783,7 @@ body:not(.user-is-tabbing) a:focus {
 
 /* Định dạng cho ảnh logo */
 .site-logo {
-  width: 180px; /* Độ rộng của logo, bạn có thể tăng giảm */
+  width: 200px; /* Độ rộng của logo, bạn có thể tăng giảm */
   height: auto;
   display: block;
   transition: transform 0.8s ease;

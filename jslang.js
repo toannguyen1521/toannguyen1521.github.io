@@ -9,7 +9,7 @@ const translations = {
     blog: "Nhật Kí",
     
     // Trang chủ
-    header__text: "Sinh viên Thiết kế IC/VLSI, sống tại Việt Nam",
+    header__text: "Một lần học, một lần trải nghiệm để cuộc sống thêm nhièu màu sắc!",
     Contact: "Liên Hệ",
     footer_text: '&copy; 2026 - Template được thiết kế & phát triển bởi <a class="link" href="./index.html">Toàn</a>.',
     
@@ -52,23 +52,33 @@ const translations = {
     //Skills
     skills_index_8: "Kĩ Năng:",
     skills_index_9: "Kinh nghiệm trong lĩnh vực Bán Dẫn",
-    skills_index_10: "Tham gia các dự án vi mạch do Trường và UNITEC JAPAN CO., LTD tổ chức.",
     skills_index_11: "Tự học lập trình vi điều khiển STM32 và hệ thống nhúng",
-    skills_index_12: "Khoá Học của Samsung Innovation Campus",
     skills_index_13: "Kiểm tra và khắc phục sự cố bo mạch điện tử trên phần mềm Altium Designer",
     skills_index_14: "Mô phỏng chip",
     skills_index_15: "Thiết kế bố cục mạch in (mạch LED/điện trở) bằng phần mềm Altium Designer.",
+    skills_index_16: "Ngôn ngữ lập trình: Python, HTML, CSS, Javascript",
     skills_index_19: "An ninh mạng & Hệ Thống",
     skills_index_20: "Tự học cài đặt và cấu hình hệ điều hành (Windows, Kali Linux).",
     skills_index_21: "Tiến hành phân tích phần mềm độc hại tĩnh và động bằng Ghidra, x32dbg, ProcMon và FakeNet-NG.",
     skills_index_22: "Phân tích các mẫu mã độc tống tiền thực tế (GandCrab, LockBit Black, Expiro) trong môi trường phòng thí nghiệm biệt lập.",
     skills_index_23: "Đã nghiên cứu phân tích lưu lượng mạng bằng Wireshark.",
     skills_index_24: "Xây dựng và duy trì một phòng thí nghiệm phân tích phần mềm độc hại chuyên dụng bằng VMware Workstation.",
+    skills_index_241: "Công cụ phân tích: VMWare, Ghidra, x32dbg and x64dbg, Wireshark, Kali Linux ",
     skills_index_31: "Quản Lý Thời Gian",
     skills_index_32: "Phân bổ thời gian rõ ràng cho các nhiệm vụ học tập, dự án và phát triển cá nhân.",
     skills_index_33: "Ưu tiên các hạn chót một cách hiệu quả bằng cách sử dụng các hệ thống quản lý công việc có cấu trúc.",
     skills_index_34: "Hoàn thành nhiệm vụ đúng thời hạn đồng thời duy trì các tiêu chuẩn chất lượng.",
     skills_index_39: '© 2026 - Template được thiết kế & và phát triển bởi <a class="link" href="./index.html">Toàn</a>.',
+    skills_index_38: "Chứng chỉ",
+    skills_index_40: "Giấy chứng chỉ C++ của Simplilearn",
+    skills_index_41: "Được cấp ngày: 09/07/2026 (MM/DD/YYYY)",
+    skills_index_42: 'Xem giấy chứng chỉ: <a href="https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf" title="Link Certificate">https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf</a>',
+    skills_index_43: "Chứng chỉ AI của Anthropic",
+    skills_index_44: "Được cấp ngày: 11/08/2026 (MM/DD/YYYY)",
+    skills_index_45: 'Xem giấy chứng chỉ: <a href="https://verify.skilljar.com/c/psnygmixr237" title="Link Certificate">https://verify.skilljar.com/c/psnygmixr237</a>',
+
+    //CV
+    cv2_index_37: "Vietnamese CV",
     
     //CV
     cv2_index_37: "CV bản tiếng Việt",
@@ -106,7 +116,7 @@ const translations = {
     
     //Home
     blog: "My Blog",
-    header__text: "IC/VLSI Design Student based in Viet Nam",
+    header__text: "Each learning opportunity, each new experienc, they all add more color to life!",
     Contact: "Get in Contact",
     footer_text: '&copy; 2026 - Template designed & developed by <a class="link" href="./index.html">Toan</a>.',
     
@@ -160,12 +170,20 @@ const translations = {
     skills_index_22: "Analyzed real-world ransomware samples (GandCrab, LockBit Black, Expiro) in isolated lab environments.",
     skills_index_23: "Studied network traffic analysis using Wireshark.",
     skills_index_24: "Built and maintained a dedicated malware analysis lab using VMware Workstation.",
+    skills_index_241: "Analysis tools: VMWare, Ghidra, x32dbg and x64dbg, Wireshark, Kali Linux ",
     skills_index_31: "Time Management",
     skills_index_32: "Clearly allocate time across academic, project, and personal development tasks.",
     skills_index_33: "Prioritize deadlines effectively using structured task management systems.",
     skills_index_34: "Consistently deliver assignments on time while maintaining quality standards.",
     skills_index_39: '© 2026 - Template designed & developed by <a class="link" href="./index.html">Toan</a>.',
-    
+    skills_index_38: "Certifications",
+    skills_index_40: "Certificate's Simplilearn C++",
+    skills_index_41: "Issued on date: 09/07/2026 (MM/DD/YYYY)",
+    skills_index_42: 'View  Certificate: <a href="https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf" title="Link Certificate">https://certificates.simplicdn.net/share/10703639_10984639_1788790645453.pdf</a>',
+    skills_index_43: "Certificate's AI Anthropic",
+    skills_index_44: "Issued on date: 11/08/2026 (MM/DD/YYYY)",
+    skills_index_45: 'View  Certificate: <a href="https://verify.skilljar.com/c/psnygmixr237" title="Link Certificate">https://verify.skilljar.com/c/psnygmixr237</a>',
+
     //CV
     cv2_index_37: "Vietnamese CV",
     cv2_index_38: "English CV",
