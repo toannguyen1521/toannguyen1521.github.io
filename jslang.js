@@ -9,7 +9,7 @@ const translations = {
     blog: "Nhật Kí",
     
     // Trang chủ
-    header__text: "Một lần học, một lần trải nghiệm để cuộc sống thêm nhièu màu sắc!",
+    header__text: "Một lần học, một lần trải nghiệm để cuộc sống thêm nhiều màu sắc!",
     Contact: "Liên Hệ",
     footer_text: '&copy; 2026 - Template được thiết kế & phát triển bởi <a class="link" href="./index.html">Toàn</a>.',
     
